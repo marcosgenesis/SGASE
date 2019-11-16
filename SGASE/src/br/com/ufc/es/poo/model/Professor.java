@@ -46,15 +46,16 @@ public class Professor extends Usuario {
            notaTrabalho[i + 1] = trabalho2;
        }
    }
-   public void mediaAluno(AlunoBolsista p, double notaTrabalho[], double notaProva[]){
-       int i=0; double mediaTrabalho = 0, mediaProva = 0;
+   public double mediaAluno(AlunoBolsista p, double notaTrabalho[], double notaProva[]){
+       int i=0; double mediaTrabalho = 0, mediaProva = 0; double mediaFinal;
        for(i = 0; i < notaTrabalho.length; i++){
            mediaTrabalho += notaTrabalho[i];
        }
        for(int j = 0; j < notaProva.length; j++){
            mediaProva += notaProva[i];
        }
-       System.out.println("A media das provas eh" +mediaProva+ "e a media dos trabalhos eh" +mediaTrabalho);
+       mediaFinal = mediaProva + mediaTrabalho;
+       return mediaFinal;
    }   
    
 
