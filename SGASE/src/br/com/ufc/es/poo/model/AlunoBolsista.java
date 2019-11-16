@@ -7,6 +7,7 @@ public class AlunoBolsista extends Usuario {
     protected int matricula;
     protected String turno ; 
     protected int presenca[] = new int[192];
+    protected int faltas [] = new int [48];
     protected double notaProva [ ] = new double [2];
     protected double notaTrabalho [] = new double[1];
  
@@ -15,6 +16,9 @@ public class AlunoBolsista extends Usuario {
         this.matricula = matricula;
         this.turno = turno;
         this.presenca = presenca;
+        this.faltas = faltas;
+        this.notaProva = notaProva;
+        this.notaTrabalho = notaTrabalho;
     }
 
     public int getMatricula() {
@@ -75,7 +79,10 @@ public class AlunoBolsista extends Usuario {
 
     @Override
     public String toString() {
-        return "AlunoBolsista{" + "matricula=" + matricula + ", turno=" + turno + '}';
+        return "AlunoBolsista{" + "matricula=" + matricula + ", turno=" + turno + ", presenca=" + presenca + ", faltas=" + faltas + ", notaProva=" + notaProva + ", notaTrabalho=" + notaTrabalho + '}';
     }
+
+    
+    
 
 }
