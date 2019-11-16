@@ -1,6 +1,8 @@
 
 package br.com.ufc.es.poo.model;
 
+import java.util.Scanner;
+
 
 public class Avaliacao {
     
@@ -46,9 +48,18 @@ public class Avaliacao {
         this.notas = notas;
     }
 
-    public double mediaAluno() { //método
-        return 0.0d;
+    public double mediaAluno(AlunoBolsista p, double avaliacao[][]) { //método
+        int i =0, j=0; double media ;
+        Scanner ler = new Scanner(System.in);
+        for(i = 0; i < avaliacao.length; i++){
+            for(j= avaliacao.length-1; j >0; j--){
+                avaliacao[i][j] = ler.nextDouble(); 
+            }
+        }  
+        media = (avaliacao[i][i])/2;
+        return media;
     }
+    
     @Override
     public String toString() {
         return "Avaliacao{" + "descricao=" + descricao + ", realizada=" + realizada + ", peso=" + peso + '}';
