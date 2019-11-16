@@ -13,24 +13,23 @@ public class Coordenador extends Usuario {
         //
     }
 
-    public void cadastraProfessor() {
-        //
+    public void cadastraProfessor(Turma turma, Professor professor) {
+        turma.getCurso().addProfessor(professor);
     }
     
-    public void editaProfessor() {
-        //
+    public void editaProfessor(Turma turma, Professor professorNovo,Professor professorAntigo) {
+        turma.getCurso().setProfessor(professorNovo,professorAntigo);
     }
   
-    public void removeProfessor() {
-        //
+    public void removeProfessor(Turma turma,Professor professorRemovido) {
+        turma.getCurso().getProfessores().remove(professorRemovido);
     }
 
-    public void cadastraAluno() {
-        //
+    public void cadastraAluno(Turma turma,AlunoBolsista alunoCadastrado) {
+        turma.getCurso().getParticipantes().add(alunoCadastrado);
     }
 
-    public void editaAluno() {
-       //
+    public void editaAluno(Turma turma) {
     }
 
     public void removeAluno() {

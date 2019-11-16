@@ -39,11 +39,21 @@ public abstract class CursosOfertados {
     public ArrayList<Professor> getProfessores() {
         return professores;
     }
-
-    public void setProfessores(ArrayList<Professor> professores) {
-        this.professores = professores;
+    public Professor getProfessor(int index) {
+        for(Professor u : professores) {
+            if (u.getId() == index) {
+               return u;
+            }
+         }
+        return professores.get(index);
     }
-
+    public void setProfessor(Professor professorNovo,Professor professorAntigo) {
+        this.professores.remove(professorAntigo.getId());
+        this.professores.add(professorNovo);
+    }
+    public void addProfessor(Professor professorNovo){
+        this.professores.add(professorNovo);
+    }
     public String getNome() {
         return nome;
     }
@@ -59,7 +69,7 @@ public abstract class CursosOfertados {
     public void setCargaHoraria(int cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
     }
-
+    
     public abstract void mediaCurso(); //método
      
     @Override
