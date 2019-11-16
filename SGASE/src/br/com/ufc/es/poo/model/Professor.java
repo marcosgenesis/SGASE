@@ -9,7 +9,7 @@ public class Professor extends Usuario {
         super(cpf, id, email, nome);
     }
 
-    public int falta(AlunoBolsista p){
+    public int totalFalta(AlunoBolsista p){
         int i = 0, j =0; int totalFaltas = 0;
         for(i =0; i < p.faltas.length ;i++){
             p.faltas[i] += 2;
@@ -20,7 +20,7 @@ public class Professor extends Usuario {
         return totalFaltas;
     }
     
-    public int presenca(AlunoBolsista p){
+    public int totalPresenca(AlunoBolsista p){
         int i = 0, j = 0; int totalPresenca = 0;
          for(i=0; i < p.presenca.length; i++){
              p.presenca[i] += 2;
@@ -46,6 +46,16 @@ public class Professor extends Usuario {
            notaTrabalho[i + 1] = trabalho2;
        }
    }
+   public void mediaAluno(AlunoBolsista p, double notaTrabalho[], double notaProva[]){
+       int i=0; double mediaTrabalho = 0, mediaProva = 0;
+       for(i = 0; i < notaTrabalho.length; i++){
+           mediaTrabalho += notaTrabalho[i];
+       }
+       for(int j = 0; j < notaProva.length; j++){
+           mediaProva += notaProva[i];
+       }
+       System.out.println("A media das provas eh" +mediaProva+ "e a media dos trabalhos eh" +mediaTrabalho);
+   }   
+   
 
-    
 }
