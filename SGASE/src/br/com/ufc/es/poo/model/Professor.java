@@ -1,6 +1,6 @@
 
 package br.com.ufc.es.poo.model;
-
+import br.com.ufc.es.poo.model.AlunoBolsista;
 
 public class Professor extends Usuario {
 
@@ -9,17 +9,28 @@ public class Professor extends Usuario {
         super(cpf, id, email, nome);
     }
 
-    public void cadastraPresenca() {
-         //
+    public void falta(AlunoBolsista p){
+        int i = 0;
+        for(i =0; i < p.faltas.length ;i++){
+            p.presenca[i] += 2;
+        }
     }
+    
+    public void presenca(AlunoBolsista p){
+        int i = 0;
+         for(i=0; i < p.presenca.length; i++){
+             p.presenca[i] += 2;
+        }
+    }
+ 
    
-    public void ministraAtv() {
-        //
-    }
-
-    public void cadastraAvaliacao() {
-        //
-    }
+   public void cadastraNotaProva(AlunoBolsista p, double notaProva[], double nota1, double nota2){
+       int i = 0;
+       for(i =0; i < notaProva.length; i++){
+           notaProva[i] = nota1;
+           notaProva[i + 1] = nota2;
+       }
+   }
 
     
 }
