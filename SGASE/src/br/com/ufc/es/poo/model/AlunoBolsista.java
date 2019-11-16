@@ -74,8 +74,8 @@ public class AlunoBolsista extends Usuario {
     }    
     
 
-    public double visualizaMediaAluno() {
-        return 0.0;
+    public void visualizaMediaAluno(Professor x) {
+        System.out.println("A media do aluno eh" +x.mediaAluno(this, notaTrabalho, notaProva));
     }
 
     public double visualizaMediaCurso() {
