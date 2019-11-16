@@ -7,7 +7,7 @@ public class Avaliacao {
     private String descricao;
     private boolean realizada;
     private int peso;
-    private double notas[ ][ ];
+    private double notas[ ][ ] = new double[3][3];
     
     public Avaliacao(String descricao, boolean realizada, int peso){
         this.descricao = descricao;
