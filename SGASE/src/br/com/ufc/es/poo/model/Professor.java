@@ -39,6 +39,13 @@ public class Professor extends Usuario {
            notaProva[i + 1] = nota2;
        }
    }
+   public void cadastraNotaTrabalho(AlunoBolsista p, double notaTrabalho[],double trabalho1, double trabalho2){
+       int i = 0;
+       for(i =0; i < notaTrabalho.length ; i++){
+           notaTrabalho[i] = trabalho1;
+           notaTrabalho[i + 1] = trabalho2;
+       }
+   }
 
     
 }
