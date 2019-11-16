@@ -1,6 +1,7 @@
 
 package br.com.ufc.es.poo.model;
 
+import br.com.ufc.es.poo.model.Professor;
 
 public class AlunoBolsista extends Usuario {
 
@@ -9,7 +10,7 @@ public class AlunoBolsista extends Usuario {
     protected int presenca[] = new int[192];
     protected int faltas [] = new int [48];
     protected double notaProva [ ] = new double [2];
-    protected double notaTrabalho [] = new double[1];
+    protected double notaTrabalho [] = new double[2];
  
     public AlunoBolsista(String cpf, int id, String email, String nome, int matricula, String turno) {
         super(cpf,id,email,nome);
@@ -60,10 +61,18 @@ public class AlunoBolsista extends Usuario {
     public void setPresenca(int[] presenca) {
         this.presenca = presenca;
     }
-
-    public int visualizarPresenca() {
-        return 0;
+      public int[] getFaltas() {
+        return faltas;
     }
+
+    public void setFaltas(int[] faltas) {
+        this.faltas = faltas;
+    }
+
+    public void visualizarPresenca(Professor x) {  
+        System.out.println("Seu numero de presenças é" +x.totalPresenca(this) + " e seu numero de faltas é "+x.totalFalta(this));
+    }    
+    
 
     public double visualizaMediaAluno() {
         return 0.0;
