@@ -9,7 +9,7 @@ public class FrequenciaRemunerada {
     private String nomeBolsista;
     private String curso;   
     private String professor; //professor orientador que  dá o aval da frequencia
-    private boolean autenticacaoProfessor;
+    private boolean autenticacaoProfessor = false;
 
     public FrequenciaRemunerada(String mesRefefente, String nomeBolsista, String curso, String professor) {
        this.mesReferente = mesReferente;
