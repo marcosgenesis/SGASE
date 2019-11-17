@@ -2,6 +2,7 @@
 package br.com.ufc.es.poo.model;
 
 import br.com.ufc.es.poo.model.Professor;
+import java.util.Scanner;
 
 public class AlunoBolsista extends Usuario {
 
@@ -11,6 +12,7 @@ public class AlunoBolsista extends Usuario {
     protected int faltas [] = new int [48];
     protected double notaProva [ ] = new double [2];
     protected double notaTrabalho [] = new double[2];
+    protected double mediaAluno;
  
     public AlunoBolsista(String cpf, int id, String email, String nome, int matricula, String turno) {
         super(cpf,id,email,nome);
@@ -20,6 +22,7 @@ public class AlunoBolsista extends Usuario {
         this.faltas = faltas;
         this.notaProva = notaProva;
         this.notaTrabalho = notaTrabalho;
+        this.mediaAluno = mediaAluno;
     }
 
     public int getMatricula() {
@@ -45,7 +48,7 @@ public class AlunoBolsista extends Usuario {
     public void setNotaProva(double[] notaProva) {
         this.notaProva = notaProva;
     }
-
+    
     public double[] getNotaTrabalho() {
         return notaTrabalho;
     }
@@ -74,7 +77,7 @@ public class AlunoBolsista extends Usuario {
     }    
     
 
-    public void visualizaMediaAluno(Professor x) {
+    public void visualizaMediaAluno(CursosOfertados x) {
         System.out.println("A media do aluno eh" +x.mediaAluno(this, notaTrabalho, notaProva));
     }
 
@@ -82,9 +85,16 @@ public class AlunoBolsista extends Usuario {
         return 0.0;
     }
    
-    public void cadastraFrequencia() {
-        //return null;
+    public void cadastraFrequencia(AlunoBolsista p,FrequenciaRemunerada frequencia[]) {
+        Scanner ler = new Scanner(System.in);
+        for(int i = 0; i < frequencia.length; i++){
+            frequencia[i].setMesReferente(ler.next());
+            frequencia[i].setNomeBolsista(ler.nextLine());
+            frequencia[i].setCurso(ler.nextLine());
+            frequencia[i].setProfessor(ler.nextLine());
+        }
     }
+    
 
     @Override
     public String toString() {
