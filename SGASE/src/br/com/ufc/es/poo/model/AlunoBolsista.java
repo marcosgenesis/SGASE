@@ -16,8 +16,9 @@ public class AlunoBolsista extends Usuario {
     protected double mediaAluno;
     protected FrequenciaRemunerada frequenciaRemunerada []= new FrequenciaRemunerada [12];
     protected String cursoMatriculado;
+    protected double mediaTurma;
  
-    public AlunoBolsista(String cpf, int id, String email, String nome, int matricula, String turno, int presenca[], int faltas[], double notaProva[], double notaTrabalho[],double mediaAluno, FrequenciaRemunerada frequenciaRemunerada[], CursosOfertados cursomatriculado) {
+    public AlunoBolsista(String cpf, int id, String email, String nome, int matricula, String turno, int presenca[], int faltas[], double notaProva[], double notaTrabalho[],double mediaAluno, FrequenciaRemunerada frequenciaRemunerada[], CursosOfertados cursomatriculado, double mediaTurma) {
         super(cpf,id,email,nome);
         this.matricula = matricula;
         this.turno = turno;
@@ -28,6 +29,7 @@ public class AlunoBolsista extends Usuario {
         this.mediaAluno = mediaAluno;
         this.frequenciaRemunerada = frequenciaRemunerada;
         this.cursoMatriculado = cursoMatriculado;
+        this.mediaTurma = mediaTurma;
         }
 
     public double getMediaAluno() {
@@ -97,6 +99,14 @@ public class AlunoBolsista extends Usuario {
         return faltas;
     }
 
+    public double getMediaTurma() {
+        return mediaTurma;
+    }
+
+    public void setMediaTurma(double mediaTurma) {
+        this.mediaTurma = mediaTurma;
+    }
+
     public void setFaltas(int[] faltas) {
         this.faltas = faltas;
     }
@@ -110,14 +120,16 @@ public class AlunoBolsista extends Usuario {
         System.out.println("A media do aluno eh" +x.mediaAluno(this, notaTrabalho, notaProva));
     }
 
-    public double visualizaMediaCurso() {
-        return 0.0;
+    public void visualizaMediaCurso(Professor x) {
+        System.out.println("A media da turma eh" +x.mediaTurma(participantes, this) );
     }
 
     @Override
     public String toString() {
-        return "AlunoBolsista{" + "matricula=" + matricula + ", turno=" + turno + ", presenca=" + presenca + ", faltas=" + faltas + ", notaProva=" + notaProva + ", notaTrabalho=" + notaTrabalho + ", mediaAluno=" + mediaAluno + ", frequenciaRemunerada=" + frequenciaRemunerada + ", cursoMatriculado=" + cursoMatriculado + '}';
+        return "AlunoBolsista{" + "matricula=" + matricula + ", turno=" + turno + ", presenca=" + presenca + ", faltas=" + faltas + ", notaProva=" + notaProva + ", notaTrabalho=" + notaTrabalho + ", mediaAluno=" + mediaAluno + ", frequenciaRemunerada=" + frequenciaRemunerada + ", cursoMatriculado=" + cursoMatriculado + ", mediaTurma=" + mediaTurma + '}';
     }
+
+    
  
 
     
