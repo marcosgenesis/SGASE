@@ -10,8 +10,8 @@ public class BolsistaRemunerado extends AlunoBolsista {
     private int numeroConta;
     private double bolsa;
 
-    public BolsistaRemunerado(String tipoConta, int agencia, int numeroConta, double bolsa, String cpf, int id, String email, String nome, int matricula, String turno, int[] presenca, int[] faltas, double[] notaProva, double[] notaTrabalho, double mediaAluno, FrequenciaRemunerada[] frequenciaRemunerada, CursosOfertados cursomatriculado) {
-        super(cpf, id, email, nome, matricula, turno, presenca, faltas, notaProva, notaTrabalho, mediaAluno, frequenciaRemunerada, cursomatriculado);
+    public BolsistaRemunerado(String tipoConta, int agencia, int numeroConta, double bolsa, String cpf, int id, String email, String nome, int matricula, String turno, int[] presenca, int[] faltas, double[] notaProva, double[] notaTrabalho, double mediaAluno, FrequenciaRemunerada[] frequenciaRemunerada, CursosOfertados cursomatriculado, double mediaCurso) {
+        super(cpf, id, email, nome, matricula, turno, presenca, faltas, notaProva, notaTrabalho, mediaAluno, frequenciaRemunerada, cursomatriculado, mediaCurso);
         this.tipoConta = tipoConta;
         this.agencia = agencia;
         this.numeroConta = numeroConta;
