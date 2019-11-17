@@ -23,6 +23,10 @@ public class FrequenciaRemunerada {
         return autenticacaoProfessor;
     }
 
+    public FrequenciaRemunerada(boolean autenticacaoProfessor) {
+        this.autenticacaoProfessor = autenticacaoProfessor;
+    }
+
     public void setAutenticacaoProfessor(boolean autenticacaoProfessor) {
         this.autenticacaoProfessor = autenticacaoProfessor;
     }
@@ -57,17 +61,12 @@ public class FrequenciaRemunerada {
 
     public void setProfessor(String professor) {
         this.professor = professor;
+    }   
+
+    @Override
+    public String toString() {
+        return "FrequenciaRemunerada{" + "mesReferente=" + mesReferente + ", nomeBolsista=" + nomeBolsista + ", curso=" + curso + ", professor=" + professor + ", autenticacaoProfessor=" + autenticacaoProfessor + '}';
     }
-
-    
-
-   
-
-
-    
-    
-    
-   
     
     
 }
