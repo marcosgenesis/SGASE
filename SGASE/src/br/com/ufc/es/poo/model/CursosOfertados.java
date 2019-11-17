@@ -70,7 +70,13 @@ public abstract class CursosOfertados {
         this.cargaHoraria = cargaHoraria;
     }
     
-    public abstract void mediaCurso(); //método
+    public  void mediaCurso(){
+        
+    }
+    
+    public abstract double mediaAluno(AlunoBolsista p, double notaTrabalho[], double notaProva[]);
+      
+      
      
     @Override
     public String toString() {
