@@ -88,16 +88,19 @@ public class AlunoBolsista extends Usuario {
         return 0.0;
     }
    
-    public void preencheFrequencia() { //preenche os atributos de FrequenciaRemunerada
-        
+    public void preencheFrequencia(FrequenciaRemunerada frequenciaRemunerada[]) { //preenche os atributos de FrequenciaRemunerada
+        for(int i = 0; i < frequenciaRemunerada.length; i++){
+            
+        }
        
     }
-    
 
     @Override
     public String toString() {
-        return "AlunoBolsista{" + "matricula=" + matricula + ", turno=" + turno + ", presenca=" + presenca + ", faltas=" + faltas + ", notaProva=" + notaProva + ", notaTrabalho=" + notaTrabalho + '}';
+        return "AlunoBolsista{" + "matricula=" + matricula + ", turno=" + turno + ", presenca=" + presenca + ", faltas=" + faltas + ", notaProva=" + notaProva + ", notaTrabalho=" + notaTrabalho + ", mediaAluno=" + mediaAluno + ", frequenciaRemunerada=" + frequenciaRemunerada + '}';
     }
+    
+
 
     
     
