@@ -1,26 +1,30 @@
 
 package br.com.ufc.es.poo.model;
 
+import java.util.Scanner;
+
 
 public class FrequenciaRemunerada {
-    private String mesRefefente;
+    private String mesReferente;
     private String nomeBolsista;
     private String curso;
-    private Professor professor;
+    private String professor; //professor orientador que  dá o aval da frequencia
+    private int frequencia [] = new int[12]; //referente a cada mês
 
-    public FrequenciaRemunerada(String mesRefefente, String nomeBolsista, String curso, Professor professor) {
-       this.mesRefefente = mesRefefente;
+    public FrequenciaRemunerada(String mesRefefente, String nomeBolsista, String curso, String professor) {
+       this.mesReferente = mesReferente;
        this.nomeBolsista = nomeBolsista;
        this.curso = curso;
        this.professor = professor;
+       this.frequencia = frequencia;
     }
       
-    public String getMesRefefente() {
-        return mesRefefente;
+    public String getMesReferente() {
+        return mesReferente;
     }
 
-    public void setMesRefefente(String mesRefefente) {
-        this.mesRefefente = mesRefefente;
+    public void setMesReferente(String mesReferente) {
+        this.mesReferente = mesReferente;
     }
 
     public String getNomeBolsista() {
@@ -39,14 +43,27 @@ public class FrequenciaRemunerada {
         this.curso = curso;
     }
 
-    public Professor getProfessor() {
+    public String getProfessor() {
         return professor;
     }
 
-    public void setProfessor(Professor professor) {
+    public void setProfessor(String professor) {
         this.professor = professor;
     }
+        public int[] getFrequencia() {
+        return frequencia;
+    }
+
+    public void setFrequencia(int[] frequencia) {
+        this.frequencia = frequencia;
+    }
     
+    
+    @Override
+    public String toString() {
+        return "FrequenciaRemunerada{" + "mesRefefente=" + mesReferente + ", nomeBolsista=" + nomeBolsista + ", curso=" + curso + ", professor=" + professor + ", frequencia=" + frequencia + '}';
+    }
+
     
     
 }
