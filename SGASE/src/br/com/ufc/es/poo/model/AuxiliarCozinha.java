@@ -1,19 +1,25 @@
 
 package br.com.ufc.es.poo.model;
+//import br.com.ufc.br.poo.es.model.Avaliacao;
 import br.com.ufc.br.poo.es.model.Avaliacao;
 import java.util.ArrayList;
+
 
 public abstract class AuxiliarCozinha extends CursosOfertados {
 
     public Cozinha local;
-    public AuxiliarCozinha(ArrayList<AlunoBolsista> participantes, ArrayList<Avaliacao> avaliacoes, ArrayList<Professor> professores,String nome,int cargaHoraria, Cozinha local) {
-        super(participantes, avaliacoes, professores, nome, cargaHoraria);
+    public AuxiliarCozinha( ArrayList<Avaliacao> avaliacoes, ArrayList<Professor> professores,String nome,int cargaHoraria, Cozinha local) {
+        super( avaliacoes, professores, nome, cargaHoraria);
     }
 
    
-    /*public double mediaCurso(){
-        
-    }*/
+      public double mediaCurso(ArrayList participantes, AlunoBolsista p){ 
+        double mediaGeral = 0;
+        for(int i=0; i < participantes.size();i++){
+            mediaGeral += p.getMediaAluno();
+        }
+        return mediaGeral;
+    }
     
     public double getMediaAluno(AlunoBolsista p, double notaTrabalho[], double notaProva[]){
        int i=0; double mediaTrabalho = 0, mediaProva = 0; double mediaFinal;
