@@ -15,8 +15,9 @@ public class AlunoBolsista extends Usuario {
     protected double notaTrabalho [] = new double[2];
     protected double mediaAluno;
     protected FrequenciaRemunerada frequenciaRemunerada []= new FrequenciaRemunerada [12];
+    protected String cursoMatriculado;
  
-    public AlunoBolsista(String cpf, int id, String email, String nome, int matricula, String turno, int presenca[], int faltas[], double notaProva[], double notaTrabalho[],double mediaAluno, FrequenciaRemunerada frequenciaRemunerada[]) {
+    public AlunoBolsista(String cpf, int id, String email, String nome, int matricula, String turno, int presenca[], int faltas[], double notaProva[], double notaTrabalho[],double mediaAluno, FrequenciaRemunerada frequenciaRemunerada[], CursosOfertados cursomatriculado) {
         super(cpf,id,email,nome);
         this.matricula = matricula;
         this.turno = turno;
@@ -26,7 +27,36 @@ public class AlunoBolsista extends Usuario {
         this.notaTrabalho = notaTrabalho;
         this.mediaAluno = mediaAluno;
         this.frequenciaRemunerada = frequenciaRemunerada;
+        this.cursoMatriculado = cursoMatriculado;
         }
+
+    public double getMediaAluno() {
+        return mediaAluno;
+    }
+
+    public void setMediaAluno(double mediaAluno) {
+        this.mediaAluno = mediaAluno;
+    }
+
+    public FrequenciaRemunerada[] getFrequenciaRemunerada() {
+        return frequenciaRemunerada;
+    }
+
+    public void setFrequenciaRemunerada(FrequenciaRemunerada[] frequenciaRemunerada) {
+        this.frequenciaRemunerada = frequenciaRemunerada;
+    }
+
+    public String getCursoMatriculado() {
+        return cursoMatriculado;
+    }
+
+    public void setCursoMatriculado(String cursoMatriculado) {
+        this.cursoMatriculado = cursoMatriculado;
+    }
+
+    public AlunoBolsista(String cursoMatriculado) {
+        this.cursoMatriculado = cursoMatriculado;
+    }
 
     public int getMatricula() {
         return matricula;
@@ -87,22 +117,15 @@ public class AlunoBolsista extends Usuario {
     public double visualizaMediaCurso() {
         return 0.0;
     }
-   
-    public void preencheFrequencia(FrequenciaRemunerada frequenciaRemunerada[]) { //preenche os atributos de FrequenciaRemunerada
-        Scanner ler = new Scanner(System.in);
-        for(int i = 0; i < frequenciaRemunerada.length; i++){
-            frequenciaRemunerada[i].setMesReferente(ler.next());
-            frequenciaRemunerada[i].setCurso(ler.nextLine());
-            frequenciaRemunerada[i].setNomeBolsista(ler.nextLine());
-            frequenciaRemunerada[i].setProfessor(ler.nextLine());
-        }
-       
-    }
 
     @Override
     public String toString() {
-        return "AlunoBolsista{" + "matricula=" + matricula + ", turno=" + turno + ", presenca=" + presenca + ", faltas=" + faltas + ", notaProva=" + notaProva + ", notaTrabalho=" + notaTrabalho + ", mediaAluno=" + mediaAluno + ", frequenciaRemunerada=" + frequenciaRemunerada + '}';
+        return "AlunoBolsista{" + "matricula=" + matricula + ", turno=" + turno + ", presenca=" + presenca + ", faltas=" + faltas + ", notaProva=" + notaProva + ", notaTrabalho=" + notaTrabalho + ", mediaAluno=" + mediaAluno + ", frequenciaRemunerada=" + frequenciaRemunerada + ", cursoMatriculado=" + cursoMatriculado + '}';
     }
+ 
+
+    
+    
     
 
 
