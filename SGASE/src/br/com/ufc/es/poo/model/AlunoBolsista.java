@@ -54,10 +54,6 @@ public class AlunoBolsista extends Usuario {
         this.cursoMatriculado = cursoMatriculado;
     }
 
-    public AlunoBolsista(String cursoMatriculado) {
-        this.cursoMatriculado = cursoMatriculado;
-    }
-
     public int getMatricula() {
         return matricula;
     }
