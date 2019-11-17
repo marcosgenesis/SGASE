@@ -10,6 +10,7 @@ public class FrequenciaRemunerada {
     private String curso;
     private String professor; //professor orientador que  dá o aval da frequencia
     private int frequencia [] = new int[12]; //referente a cada mês
+    private boolean autenticacaoProfessor;
 
     public FrequenciaRemunerada(String mesRefefente, String nomeBolsista, String curso, String professor) {
        this.mesReferente = mesReferente;
@@ -17,6 +18,15 @@ public class FrequenciaRemunerada {
        this.curso = curso;
        this.professor = professor;
        this.frequencia = frequencia;
+       this.autenticacaoProfessor = autenticacaoProfessor;
+    }
+
+    public boolean isAutenticacaoProfessor() {
+        return autenticacaoProfessor;
+    }
+
+    public void setAutenticacaoProfessor(boolean autenticacaoProfessor) {
+        this.autenticacaoProfessor = autenticacaoProfessor;
     }
       
     public String getMesReferente() {
@@ -57,13 +67,14 @@ public class FrequenciaRemunerada {
     public void setFrequencia(int[] frequencia) {
         this.frequencia = frequencia;
     }
-    
-    
+
     @Override
     public String toString() {
-        return "FrequenciaRemunerada{" + "mesRefefente=" + mesReferente + ", nomeBolsista=" + nomeBolsista + ", curso=" + curso + ", professor=" + professor + ", frequencia=" + frequencia + '}';
+        return "FrequenciaRemunerada{" + "mesReferente=" + mesReferente + ", nomeBolsista=" + nomeBolsista + ", curso=" + curso + ", professor=" + professor + ", frequencia=" + frequencia + ", autenticacaoProfessor=" + autenticacaoProfessor + '}';
     }
-
+    
+    
+   
     
     
 }
