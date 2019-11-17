@@ -2,14 +2,14 @@
 package br.com.ufc.es.poo.model;
 
 import java.util.Scanner;
-
+import java.util.ArrayList;
 
 public class FrequenciaRemunerada {
     private String mesReferente;
     private String nomeBolsista;
-    private String curso;
+    private String curso;   
     private String professor; //professor orientador que  dá o aval da frequencia
-    private int frequencia [] = new int[12]; //referente a cada mês
+    private ArrayList <FrequenciaRemunerada> frequencia; //referente a cada mês
     private boolean autenticacaoProfessor;
 
     public FrequenciaRemunerada(String mesRefefente, String nomeBolsista, String curso, String professor) {
@@ -60,11 +60,12 @@ public class FrequenciaRemunerada {
     public void setProfessor(String professor) {
         this.professor = professor;
     }
-        public int[] getFrequencia() {
+
+    public ArrayList<FrequenciaRemunerada> getFrequencia() {
         return frequencia;
     }
 
-    public void setFrequencia(int[] frequencia) {
+    public void setFrequencia(ArrayList<FrequenciaRemunerada> frequencia) {
         this.frequencia = frequencia;
     }
 
@@ -72,6 +73,9 @@ public class FrequenciaRemunerada {
     public String toString() {
         return "FrequenciaRemunerada{" + "mesReferente=" + mesReferente + ", nomeBolsista=" + nomeBolsista + ", curso=" + curso + ", professor=" + professor + ", frequencia=" + frequencia + ", autenticacaoProfessor=" + autenticacaoProfessor + '}';
     }
+
+
+    
     
     
    
