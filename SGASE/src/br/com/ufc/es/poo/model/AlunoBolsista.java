@@ -3,6 +3,7 @@ package br.com.ufc.es.poo.model;
 
 import br.com.ufc.es.poo.model.Professor;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class AlunoBolsista extends Usuario {
 
@@ -13,8 +14,9 @@ public class AlunoBolsista extends Usuario {
     protected double notaProva [ ] = new double [2];
     protected double notaTrabalho [] = new double[2];
     protected double mediaAluno;
+    protected FrequenciaRemunerada frequenciaRemunerada[] = new FrequenciaRemunerada[12];
  
-    public AlunoBolsista(String cpf, int id, String email, String nome, int matricula, String turno) {
+    public AlunoBolsista(String cpf, int id, String email, String nome, int matricula, String turno, int presenca[], int faltas[], double notaProva[], double notaTrabalho[],double mediaAluno, FrequenciaRemunerada frequenciaRemunerada []) {
         super(cpf,id,email,nome);
         this.matricula = matricula;
         this.turno = turno;
@@ -23,6 +25,7 @@ public class AlunoBolsista extends Usuario {
         this.notaProva = notaProva;
         this.notaTrabalho = notaTrabalho;
         this.mediaAluno = mediaAluno;
+        this.frequenciaRemunerada = frequenciaRemunerada;
     }
 
     public int getMatricula() {
@@ -85,13 +88,13 @@ public class AlunoBolsista extends Usuario {
         return 0.0;
     }
    
-    public void cadastraFrequencia(AlunoBolsista p,FrequenciaRemunerada frequencia[]) {
+    public void cadastraFrequencia(AlunoBolsista p, ArrayList frequencia) { //preenche os atributos de FrequenciaRemunerada
         Scanner ler = new Scanner(System.in);
-        for(int i = 0; i < frequencia.length; i++){
-            frequencia[i].setMesReferente(ler.next());
-            frequencia[i].setNomeBolsista(ler.nextLine());
-            frequencia[i].setCurso(ler.nextLine());
-            frequencia[i].setProfessor(ler.nextLine());
+        for(int i = 0; i < frequencia.size(); i++){
+            frequencia.add(ler.nextLine());
+            frequencia.add(ler.nextLine());
+            frequencia.add(ler.nextLine());
+            
         }
     }
     
