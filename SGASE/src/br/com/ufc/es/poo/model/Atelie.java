@@ -18,7 +18,6 @@ public class Atelie extends LocalAula {
         return vagas;
     }
 
- 
     public void setVagas(int[] vagas) {
         this.vagas = vagas;
     }

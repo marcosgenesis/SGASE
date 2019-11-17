@@ -18,7 +18,7 @@ public class Administrador extends Usuario {
         return coordenador;
     }
     
-    public void setCoordenador(ArrayList<Coordenador> coordenador) {
+    public void setCoordenador(ArrayList<CoordenadorImpl> coordenador) {
         this.coordenador = this.coordenador;
     }
      public void cadastraCoordenadorImpl(CoordenadorImpl p) {

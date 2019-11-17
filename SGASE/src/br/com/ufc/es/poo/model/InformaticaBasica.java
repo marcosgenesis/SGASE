@@ -1,6 +1,7 @@
 
 package br.com.ufc.es.poo.model;
 
+import br.com.ufc.br.poo.es.model.Avaliacao;
 import java.util.ArrayList;
 
 
@@ -20,7 +21,6 @@ public abstract class InformaticaBasica extends CursosOfertados {
     public void setLocal(Laboratorio local) {
         this.local = local;
     }
-
     
     public void getMediaCurso(AlunoBolsista alunos[]){
     

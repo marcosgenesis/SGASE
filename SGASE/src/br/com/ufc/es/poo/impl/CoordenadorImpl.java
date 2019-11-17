@@ -16,7 +16,7 @@ public class CoordenadorImpl extends Usuario implements Coordenador{
     }
 
     public void verificaFrequenciaRemunerada() {
-        //
+        //verificaFrequencia(p, frequenciaRemunerada, x, mesAtual);
     }
 
     public void cadastraProfessor(Turma turma, Professor professor) {

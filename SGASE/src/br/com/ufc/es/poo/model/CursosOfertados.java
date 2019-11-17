@@ -1,5 +1,6 @@
 
 package br.com.ufc.es.poo.model;
+import br.com.ufc.br.poo.es.model.Avaliacao;
 import java.util.ArrayList;
 
 
@@ -75,7 +76,7 @@ public abstract class CursosOfertados {
     }
     
     public abstract double mediaAluno(AlunoBolsista p, double notaTrabalho[], double notaProva[]);
-      
+    
       
      
     @Override
