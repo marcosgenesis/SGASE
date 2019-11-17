@@ -120,8 +120,8 @@ public class AlunoBolsista extends Usuario {
         System.out.println("A media do aluno eh" +x.mediaAluno(this, notaTrabalho, notaProva));
     }
 
-    public void visualizaMediaCurso(Professor x) {
-        System.out.println("A media da turma eh" +x.mediaTurma(participantes, this) );
+    public void visualizaMediaTurma(AlunoBolsista p) {
+        System.out.println(p.getMediaTurma());
     }
 
     @Override
@@ -129,6 +129,7 @@ public class AlunoBolsista extends Usuario {
         return "AlunoBolsista{" + "matricula=" + matricula + ", turno=" + turno + ", presenca=" + presenca + ", faltas=" + faltas + ", notaProva=" + notaProva + ", notaTrabalho=" + notaTrabalho + ", mediaAluno=" + mediaAluno + ", frequenciaRemunerada=" + frequenciaRemunerada + ", cursoMatriculado=" + cursoMatriculado + ", mediaTurma=" + mediaTurma + '}';
     }
 
+   
     
  
 
