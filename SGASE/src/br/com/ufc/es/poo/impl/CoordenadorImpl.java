@@ -16,7 +16,7 @@ public class CoordenadorImpl extends Usuario implements Coordenador{
     }
 
     public void verificaFrequenciaRemunerada() {
-        //verificaFrequencia(p, frequenciaRemunerada, x, mesAtual);
+        
     }
 
     public void cadastraProfessor(Turma turma, Professor professor) {
@@ -32,7 +32,7 @@ public class CoordenadorImpl extends Usuario implements Coordenador{
     }
 
     public void cadastraAluno(Turma turma,AlunoBolsista alunoCadastrado) {
-        turma.getCurso().getParticipantes().add(alunoCadastrado);
+        turma.getParticipantes().add(alunoCadastrado);
     }
 
     public void editaAluno(Turma turma) {
