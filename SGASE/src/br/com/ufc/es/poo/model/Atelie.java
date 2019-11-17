@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Atelie extends LocalAula {
   
-    private int vagas [] ; //10 vagas   
+    private int vagas []  = new int [10]; //10 vagas   
     private ArrayList<String> materiais ;
 
     public Atelie(Endereco endereco, int vagas[]) {

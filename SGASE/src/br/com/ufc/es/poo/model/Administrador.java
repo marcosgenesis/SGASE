@@ -32,7 +32,7 @@ public class Administrador extends Usuario {
         }
     }
      
-     public void removeCoordenador(Coordenador p){
+     public void removeCoordenadorImpl(CoordenadorImpl p){
          Scanner ler = new Scanner(System.in);
          int i = 0;
          for(i = 0; i < coordenador.size(); i++){

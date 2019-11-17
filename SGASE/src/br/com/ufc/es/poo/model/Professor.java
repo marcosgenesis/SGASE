@@ -32,7 +32,7 @@ public class Professor extends Usuario {
     }
  
    
-   public void cadastraNotaProva(AlunoBolsista p, double notaProva[], double nota1, double nota2){
+   public void cadastraNotaProva(AlunoBolsista p, double notaProva[], double nota1, double nota2){ //alimenta o vetor de provas
        int i = 0;
        for(i =0; i < notaProva.length; i++){
            notaProva[i] = nota1;
@@ -46,17 +46,9 @@ public class Professor extends Usuario {
            notaTrabalho[i + 1] = trabalho2;
        }
    }
-   public double mediaAluno(AlunoBolsista p, double notaTrabalho[], double notaProva[]){
-       int i=0; double mediaTrabalho = 0, mediaProva = 0; double mediaFinal;
-       for(i = 0; i < notaTrabalho.length; i++){
-           mediaTrabalho += notaTrabalho[i];
-       }
-       for(int j = 0; j < notaProva.length; j++){
-           mediaProva += notaProva[i];
-       }
-       mediaFinal = mediaProva + mediaTrabalho;
-       return mediaFinal;
-   }   
+   public void liberaFrequenciaRemunerada(){
+       
+   }
    
 
 }

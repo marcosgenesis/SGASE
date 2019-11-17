@@ -9,7 +9,6 @@ public class FrequenciaRemunerada {
     private String nomeBolsista;
     private String curso;   
     private String professor; //professor orientador que  dá o aval da frequencia
-    private ArrayList <FrequenciaRemunerada> frequencia; //referente a cada mês
     private boolean autenticacaoProfessor;
 
     public FrequenciaRemunerada(String mesRefefente, String nomeBolsista, String curso, String professor) {
@@ -17,7 +16,6 @@ public class FrequenciaRemunerada {
        this.nomeBolsista = nomeBolsista;
        this.curso = curso;
        this.professor = professor;
-       this.frequencia = frequencia;
        this.autenticacaoProfessor = autenticacaoProfessor;
     }
 
@@ -61,18 +59,9 @@ public class FrequenciaRemunerada {
         this.professor = professor;
     }
 
-    public ArrayList<FrequenciaRemunerada> getFrequencia() {
-        return frequencia;
-    }
+    
 
-    public void setFrequencia(ArrayList<FrequenciaRemunerada> frequencia) {
-        this.frequencia = frequencia;
-    }
-
-    @Override
-    public String toString() {
-        return "FrequenciaRemunerada{" + "mesReferente=" + mesReferente + ", nomeBolsista=" + nomeBolsista + ", curso=" + curso + ", professor=" + professor + ", frequencia=" + frequencia + ", autenticacaoProfessor=" + autenticacaoProfessor + '}';
-    }
+   
 
 
     
