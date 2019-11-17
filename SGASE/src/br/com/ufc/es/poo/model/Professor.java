@@ -1,6 +1,8 @@
 
 package br.com.ufc.es.poo.model;
 import br.com.ufc.es.poo.model.AlunoBolsista;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class Professor extends Usuario {
 
@@ -46,9 +48,20 @@ public class Professor extends Usuario {
            notaTrabalho[i + 1] = trabalho2;
        }
    }
-   public void liberaFrequenciaRemunerada(){
-       
+ 
+   public boolean verificaFrequencia(AlunoBolsista p,FrequenciaRemunerada frequenciaRemunerada[], Professor x, Date mesAtual){ //professor passado na main, dataatual bm vai ser lido na mian tbm
+        for(int i = 0; i < frequenciaRemunerada.length;i++){
+           if(frequenciaRemunerada[i].getNomeBolsista().equals(p.getNome())){
+                frequenciaRemunerada[i].setAutenticacaoProfessor(true);
+           }else if(frequenciaRemunerada[i].getCurso().equals(p.getCursoMatriculado())){
+                frequenciaRemunerada[i].setAutenticacaoProfessor(true);
+           }else if(frequenciaRemunerada[i].getProfessor().equals(x.getNome())){ //comparando o professor de frequencia remunerada com o  
+                frequenciaRemunerada[i].setAutenticacaoProfessor(true);
+           }else if(frequenciaRemunerada[i].getMesReferente().equals(mesAtual)){
+                frequenciaRemunerada[i].setAutenticacaoProfessor(true);
+           }
+       }
+       return false;
    }
-   
 
 }
