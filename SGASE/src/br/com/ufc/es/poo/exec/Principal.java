@@ -19,8 +19,12 @@ public class Principal {
             }while(tipoUsuario > 4 || tipoUsuario < 1);
             switch(tipoUsuario){
                 case 1: {
+                    do{
+                        
                     System.out.println("Essas são as opções disponíveis para você:");
                     System.out.println("");
+                        
+                    }while(!shouldcontinue);
                 }
                 case 2:{
                     System.out.println("Essas são as opções disponíveis para você:");

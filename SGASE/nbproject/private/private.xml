@@ -3,11 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/poo/es/model/Atelie.java</file>
-            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/sgase/SGASE.java</file>
-            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/poo/es/model/Cozinha.java</file>
-            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/poo/es/model/CursoOfertado.java</file>
-            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/poo/es/model/AuxiliarCozinha.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/Turma.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/AlunoBolsista.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/AuxiliarCozinha.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/Administrador.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/CursosOfertados.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/Artesanato.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/Professor.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/exec/Principal.java</file>
         </group>
     </open-files>
 </project-private>

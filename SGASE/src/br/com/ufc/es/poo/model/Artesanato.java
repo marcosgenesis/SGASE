@@ -1,7 +1,6 @@
 
 package br.com.ufc.es.poo.model;
 
-import br.com.ufc.br.poo.es.model.Avaliacao;
 import java.util.ArrayList;
 
 
@@ -9,8 +8,8 @@ public abstract class Artesanato extends CursosOfertados {
 
     public Atelie local;
     
-    public Artesanato( ArrayList<Professor> professores,String nome,int cargaHoraria) {
-        super( professores, nome, cargaHoraria);
+    public Artesanato( ArrayList<Avaliacao> avaliacoes, ArrayList<Professor> professores,String nome,int cargaHoraria) {
+        super( avaliacoes, professores, nome, cargaHoraria);
     }
 
      public double mediaCurso(ArrayList participantes, AlunoBolsista p){ 
