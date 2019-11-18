@@ -9,8 +9,8 @@ public abstract class InformaticaBasica extends CursosOfertados {
 
     public Laboratorio local;
     
-    public InformaticaBasica( ArrayList<Avaliacao> avaliacoes, ArrayList<Professor> professores,String nome,int cargaHoraria, Laboratorio local) {
-        super (  avaliacoes,  professores, nome, cargaHoraria);
+    public InformaticaBasica( ArrayList<Professor> professores,String nome,int cargaHoraria, Laboratorio local) {
+        super ( professores, nome, cargaHoraria);
         this.local = local;
     }
 

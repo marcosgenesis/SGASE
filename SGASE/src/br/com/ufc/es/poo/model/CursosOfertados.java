@@ -6,26 +6,18 @@ import java.util.ArrayList;
 
 public abstract class CursosOfertados {
 
-    private ArrayList<Avaliacao> avaliacoes;
+    
     private ArrayList<Professor> professores;
     private String nome;
     private int cargaHoraria;
  
-    public CursosOfertados( ArrayList<Avaliacao> avaliacoes, ArrayList<Professor> professores,String nome,int cargaHoraria) {
-        this.avaliacoes = avaliacoes;
+    public CursosOfertados(ArrayList<Professor> professores,String nome,int cargaHoraria) {
         this.professores = professores;
         this.nome = nome;
         this.cargaHoraria = cargaHoraria;
     }
 
 
-    public ArrayList<Avaliacao> getAvaliacoes() {
-        return avaliacoes;
-    }
-
-    public void setAvaliacoes(ArrayList<Avaliacao> avaliacoes) {
-        this.avaliacoes = avaliacoes;
-    }
 
     public ArrayList<Professor> getProfessores() {
         return professores;
@@ -63,12 +55,13 @@ public abstract class CursosOfertados {
     
     
     public abstract double mediaAluno(AlunoBolsista p, double notaTrabalho[], double notaProva[]); //métoo abstrato
-    
-          
+
     @Override
     public String toString() {
-        return "CursosOfertados{" + "avaliacoes=" + avaliacoes + ", professores=" + professores + ", nome=" + nome + ", cargaHoraria=" + cargaHoraria + '}';
+        return "CursosOfertados{" + "professores=" + professores + ", nome=" + nome + ", cargaHoraria=" + cargaHoraria + '}';
     }
+    
+          
     
       
      
