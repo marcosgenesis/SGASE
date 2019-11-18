@@ -7,8 +7,8 @@ import java.util.Date;
 public class Professor extends Usuario {
 
  
-    public Professor(String cpf, int id, String email, String nome) {
-        super(cpf, id, email, nome);
+    public Professor(String cpf, String senha, String email, String nome) {
+        super(cpf,nome,email,senha);
     }
 
     public int totalFalta(AlunoBolsista p){

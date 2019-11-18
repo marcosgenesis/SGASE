@@ -1,7 +1,5 @@
 
 package br.com.ufc.es.poo.model;
-//import br.com.ufc.br.poo.es.model.Avaliacao;
-import br.com.ufc.br.poo.es.model.Avaliacao;
 import java.util.ArrayList;
 
 

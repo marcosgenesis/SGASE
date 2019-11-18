@@ -5,20 +5,16 @@ package br.com.ufc.es.poo.model;
 public class Usuario {
     
     protected String cpf;
-    protected int id;
     protected String email;
     protected String nome;
-    
-    public Usuario(){
-        
-    }
-    
-    public Usuario(String cpf, int id, String email, String nome) {
+    protected String senha;
+    public Usuario(){}
+    public Usuario(String cpf,String nome, String email,String senha) {
         super();
         this.cpf = cpf;
-        this.id = id;
         this.email = email;
         this.nome = nome;
+        this.senha = senha;
     }
 
     public String getCpf() {
@@ -29,13 +25,14 @@ public class Usuario {
         this.cpf = cpf;
     }
 
-    public int getId() {
-        return id;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
+
 
     public String getEmail() {
         return email;
@@ -55,8 +52,10 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "cpf=" + cpf + ", id=" + id + ", email=" + email + ", nome=" + nome + '}';
+        return "Usuario{" + "cpf=" + cpf + ", email=" + email + ", nome=" + nome + '}';
     }
+
+    
 
 
 

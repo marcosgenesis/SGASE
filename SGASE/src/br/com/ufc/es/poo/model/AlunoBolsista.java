@@ -17,9 +17,9 @@ public class AlunoBolsista extends Usuario {
     protected FrequenciaRemunerada frequenciaRemunerada []= new FrequenciaRemunerada [12];
     protected String cursoMatriculado;
     protected double mediaTurma;
- 
-    public AlunoBolsista(String cpf, int id, String email, String nome, int matricula, String turno, int presenca[], int faltas[], double notaProva[], double notaTrabalho[],double mediaAluno, FrequenciaRemunerada frequenciaRemunerada[], CursosOfertados cursomatriculado, double mediaTurma) {
-        super(cpf,id,email,nome);
+    public AlunoBolsista(){}
+    public AlunoBolsista(String cpf, String senha, String email, String nome, int matricula, String turno, int presenca[], int faltas[], double notaProva[], double notaTrabalho[],double mediaAluno, FrequenciaRemunerada frequenciaRemunerada[], CursosOfertados cursomatriculado, double mediaTurma) {
+        super(cpf,nome,email,senha);
         this.matricula = matricula;
         this.turno = turno;
         this.presenca = presenca;

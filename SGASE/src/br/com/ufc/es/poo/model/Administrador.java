@@ -9,9 +9,8 @@ public class Administrador extends Usuario {
 
     private ArrayList<CoordenadorImpl> coordenador = new ArrayList <CoordenadorImpl>();
     
-    public Administrador(String cpf, int id, String email, String nome) {
-        super(cpf, id, email, nome);
-        this.coordenador = coordenador;
+    public Administrador(String cpf, String nome, String email,String senha) {
+        super(cpf,nome,email,senha);
     }
 
     public ArrayList<CoordenadorImpl> getCoordenador() {

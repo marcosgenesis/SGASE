@@ -12,8 +12,8 @@ import java.util.ArrayList;
 public class CoordenadorImpl extends Usuario implements Coordenador{
 
     
-    public CoordenadorImpl(String cpf, int id, String email, String nome) {
-        super(cpf, id, email, nome);
+    public CoordenadorImpl(String cpf, String nome, String email,String senha) {
+        super(cpf, nome, email, senha );
     }
 
     public void verificaFrequenciaRemunerada() {
@@ -25,7 +25,7 @@ public class CoordenadorImpl extends Usuario implements Coordenador{
     }
     
     public void editaProfessor(Turma turma, Professor professorNovo,Professor professorAntigo) {
-        turma.getCurso().setProfessor(professorNovo,professorAntigo);
+        //turma.getCurso().setProfessor(professorNovo,professorAntigo);
     }
   
     public void removeProfessor(Turma turma,Professor professorRemovido) {

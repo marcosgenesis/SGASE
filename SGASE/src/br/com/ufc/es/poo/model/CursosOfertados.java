@@ -1,6 +1,5 @@
 
 package br.com.ufc.es.poo.model;
-import br.com.ufc.br.poo.es.model.Avaliacao;
 import java.util.ArrayList;
 
 
@@ -21,7 +20,7 @@ public abstract class CursosOfertados {
 
     public ArrayList<Professor> getProfessores() {
         return professores;
-    }
+    }/*
     public Professor getProfessor(int index) {
         for(Professor u : professores) {
             if (u.getId() == index) {
@@ -33,7 +32,7 @@ public abstract class CursosOfertados {
     public void setProfessor(Professor professorNovo,Professor professorAntigo) {
         this.professores.remove(professorAntigo.getId());
         this.professores.add(professorNovo);
-    }
+    }*/
     public void addProfessor(Professor professorNovo){
         this.professores.add(professorNovo);
     }
