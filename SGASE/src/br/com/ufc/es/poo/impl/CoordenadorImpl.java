@@ -1,11 +1,12 @@
 
 package br.com.ufc.es.poo.impl;
-//import br.com.ufc.es.poo.model.*;
+import br.com.ufc.es.poo.model.*;
 import br.com.ufc.es.poo.Interfaces.*;
 import br.com.ufc.es.poo.model.AlunoBolsista;
 import br.com.ufc.es.poo.model.Professor;
 import br.com.ufc.es.poo.model.Turma;
 import br.com.ufc.es.poo.model.Usuario;
+import java.util.ArrayList;
 
 
 public class CoordenadorImpl extends Usuario implements Coordenador{
@@ -42,6 +43,6 @@ public class CoordenadorImpl extends Usuario implements Coordenador{
     public void removeAluno() {
       //
     }
-    
+
 }
     

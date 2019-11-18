@@ -4,6 +4,7 @@ package br.com.ufc.es.poo.Interfaces;
 import br.com.ufc.es.poo.model.AlunoBolsista;
 import br.com.ufc.es.poo.model.Professor;
 import br.com.ufc.es.poo.model.Turma;
+import java.util.ArrayList;
 
 
 public interface Coordenador {

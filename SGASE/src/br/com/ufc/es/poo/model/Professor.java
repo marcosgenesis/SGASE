@@ -69,6 +69,7 @@ public class Professor extends Usuario {
         for(int i=0; i < participantes.size();i++){
             mediaGeral += p.getMediaAluno();
         }
+        p.setMediaTurma(mediaGeral);
         return mediaGeral;
     }
    

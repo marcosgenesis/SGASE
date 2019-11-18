@@ -21,15 +21,7 @@ public abstract class InformaticaBasica extends CursosOfertados {
     public void setLocal(Laboratorio local) {
         this.local = local;
     }
-    
-    public double mediaCurso(ArrayList participantes, AlunoBolsista p){
-        double mediaGeral = 0;
-        for(int i=0; i < participantes.size();i++){
-            mediaGeral += p.getMediaAluno();
-        }
-        return mediaGeral;
-    }
-    
+
     public double getMediaAluno(AlunoBolsista p, double notaTrabalho[], double notaProva[]){ //método abstrato
        int i=0; double mediaTrabalho = 0, mediaProva = 0; double mediaFinal;
        for(i = 0; i < notaTrabalho.length; i++){
@@ -42,9 +34,11 @@ public abstract class InformaticaBasica extends CursosOfertados {
        return mediaFinal;
     }
 
-    
     @Override
     public String toString() {
         return "InformaticaBasica{" + "local=" + local + '}';
     }
+
+    
+   
 }
