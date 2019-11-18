@@ -1,21 +1,24 @@
 
 package br.com.ufc.es.poo.model;
 
+import java.util.Scanner;
+
 public class BolsistaRemunerado extends AlunoBolsista {
 
     private String tipoConta;
     private int agencia;
     private int numeroConta;
     private double bolsa;
-    
-    public BolsistaRemunerado(String cpf, int id, String email, String nome, int matricula, String turno) {
-        super( cpf, id, email, nome, matricula, turno);
+
+    public BolsistaRemunerado(String tipoConta, int agencia, int numeroConta, double bolsa, String cpf, int id, String email, String nome, int matricula, String turno, int[] presenca, int[] faltas, double[] notaProva, double[] notaTrabalho, double mediaAluno, FrequenciaRemunerada[] frequenciaRemunerada, CursosOfertados cursomatriculado, double mediaTurma) {
+        super(cpf, id, email, nome, matricula, turno, presenca, faltas, notaProva, notaTrabalho, mediaAluno, frequenciaRemunerada, cursomatriculado, mediaTurma);
         this.tipoConta = tipoConta;
         this.agencia = agencia;
         this.numeroConta = numeroConta;
         this.bolsa = bolsa;
     }
 
+   
     public String getTipoConta() {
         return tipoConta;
     }
@@ -48,10 +51,18 @@ public class BolsistaRemunerado extends AlunoBolsista {
         this.bolsa = bolsa;
     }
 
-    public void cadastraFrequenciaRemunerada() {
-     
+   
+    public void preencheFrequencia(FrequenciaRemunerada frequenciaRemunerada[]) { //preenche os atributos de FrequenciaRemunerada
+        Scanner ler = new Scanner(System.in);
+        for(int i = 0; i < frequenciaRemunerada.length; i++){
+            frequenciaRemunerada[i].setMesReferente(ler.next());
+            frequenciaRemunerada[i].setCurso(ler.nextLine());
+            frequenciaRemunerada[i].setNomeBolsista(ler.nextLine());
+            frequenciaRemunerada[i].setProfessor(ler.nextLine());
+        }
+       
     }
-    
+
     @Override
     public String toString() {
         return "BolsistaRemunerado{" + "tipoConta=" + tipoConta + ", agencia=" + agencia + ", numeroConta=" + numeroConta + ", bolsa=" + bolsa + '}';

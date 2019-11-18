@@ -1,20 +1,59 @@
 
 package br.com.ufc.es.poo.model;
 
+import br.com.ufc.es.poo.model.Professor;
+import java.util.Scanner;
+import java.util.ArrayList;
 
 public class AlunoBolsista extends Usuario {
 
     protected int matricula;
     protected String turno ; 
     protected int presenca[] = new int[192];
+    protected int faltas [] = new int [48];
     protected double notaProva [ ] = new double [2];
-    protected double notaTrabalho [] = new double[1];
+    protected double notaTrabalho [] = new double[2];
+    protected double mediaAluno;
+    protected FrequenciaRemunerada frequenciaRemunerada []= new FrequenciaRemunerada [12];
+    protected String cursoMatriculado;
+    protected double mediaTurma;
  
-    public AlunoBolsista(String cpf, int id, String email, String nome, int matricula, String turno) {
+    public AlunoBolsista(String cpf, int id, String email, String nome, int matricula, String turno, int presenca[], int faltas[], double notaProva[], double notaTrabalho[],double mediaAluno, FrequenciaRemunerada frequenciaRemunerada[], CursosOfertados cursomatriculado, double mediaTurma) {
         super(cpf,id,email,nome);
         this.matricula = matricula;
         this.turno = turno;
         this.presenca = presenca;
+        this.faltas = faltas;
+        this.notaProva = notaProva;
+        this.notaTrabalho = notaTrabalho;
+        this.mediaAluno = mediaAluno;
+        this.frequenciaRemunerada = frequenciaRemunerada;
+        this.cursoMatriculado = cursoMatriculado;
+        this.mediaTurma = mediaTurma;
+        }
+
+    public double getMediaAluno() {
+        return mediaAluno;
+    }
+
+    public void setMediaAluno(double mediaAluno) {
+        this.mediaAluno = mediaAluno;
+    }
+
+    public FrequenciaRemunerada[] getFrequenciaRemunerada() {
+        return frequenciaRemunerada;
+    }
+
+    public void setFrequenciaRemunerada(FrequenciaRemunerada[] frequenciaRemunerada) {
+        this.frequenciaRemunerada = frequenciaRemunerada;
+    }
+
+    public String getCursoMatriculado() {
+        return cursoMatriculado;
+    }
+
+    public void setCursoMatriculado(String cursoMatriculado) {
+        this.cursoMatriculado = cursoMatriculado;
     }
 
     public int getMatricula() {
@@ -40,7 +79,7 @@ public class AlunoBolsista extends Usuario {
     public void setNotaProva(double[] notaProva) {
         this.notaProva = notaProva;
     }
-
+    
     public double[] getNotaTrabalho() {
         return notaTrabalho;
     }
@@ -56,26 +95,50 @@ public class AlunoBolsista extends Usuario {
     public void setPresenca(int[] presenca) {
         this.presenca = presenca;
     }
-
-    public int visualizarPresenca() {
-        return 0;
+      public int[] getFaltas() {
+        return faltas;
     }
 
-    public double visualizaMediaAluno() {
-        return 0.0;
+    public double getMediaTurma() {
+        return mediaTurma;
     }
 
-    public double visualizaMediaCurso() {
-        return 0.0;
+    public void setMediaTurma(double mediaTurma) {
+        this.mediaTurma = mediaTurma;
     }
-   
-    public void cadastraFrequencia() {
-        //return null;
+
+    public void setFaltas(int[] faltas) {
+        this.faltas = faltas;
+    }
+
+    public void visualizarPresenca(Professor x) {  
+        System.out.println("Seu numero de presenças é" +x.totalPresenca(this) + " e seu numero de faltas é "+x.totalFalta(this));
+    }    
+    
+
+    public void visualizaMediaAluno(CursosOfertados x) {
+        System.out.println("A media do aluno eh" +x.mediaAluno(this, notaTrabalho, notaProva));
+    }
+
+    public void visualizaMediaTurma(AlunoBolsista p) {
+        System.out.println(p.getMediaTurma());
     }
 
     @Override
     public String toString() {
-        return "AlunoBolsista{" + "matricula=" + matricula + ", turno=" + turno + '}';
+        return "AlunoBolsista{" + "matricula=" + matricula + ", turno=" + turno + ", presenca=" + presenca + ", faltas=" + faltas + ", notaProva=" + notaProva + ", notaTrabalho=" + notaTrabalho + ", mediaAluno=" + mediaAluno + ", frequenciaRemunerada=" + frequenciaRemunerada + ", cursoMatriculado=" + cursoMatriculado + ", mediaTurma=" + mediaTurma + '}';
     }
+
+   
+    
+ 
+
+    
+    
+    
+
+
+    
+    
 
 }
