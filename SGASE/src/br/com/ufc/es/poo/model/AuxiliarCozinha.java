@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public abstract class AuxiliarCozinha extends CursosOfertados {
 
     public Cozinha local;
-    public AuxiliarCozinha( ArrayList<Avaliacao> avaliacoes, ArrayList<Professor> professores,String nome,int cargaHoraria, Cozinha local) {
-        super( avaliacoes, professores, nome, cargaHoraria);
+    public AuxiliarCozinha(  ArrayList<Professor> professores,String nome,int cargaHoraria, Cozinha local) {
+        super( professores, nome, cargaHoraria);
     }
 
    
