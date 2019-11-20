@@ -20,7 +20,7 @@ public class AlunoBolsista extends Usuario {
     
     public AlunoBolsista(){}
     public AlunoBolsista(String cpf, String senha, String email, String nome, 
-            int matricula,String turno, int presenca, int faltas, double notaProva, double notaTrabalho,double mediaAluno,FrequenciaRemunerada frequenciaRmunerada,CursosOfertados cursoMatriculado, double mediaTurma) {
+            int matricula, int presenca, int faltas, double notaProva, double notaTrabalho,double mediaAluno,FrequenciaRemunerada frequenciaRemunerada[],CursosOfertados cursoMatriculado, double mediaTurma) {
         super(cpf,nome,email,senha);
         this.matricula = matricula;
         this.turno = turno;
