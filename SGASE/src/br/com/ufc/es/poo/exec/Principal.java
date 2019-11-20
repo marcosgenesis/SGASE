@@ -164,9 +164,11 @@ public class Principal {
                                             System.out.println(alunosCadastrados.get(cpf).toString());
                                             break;
                                         }
-                                        case 3:break;
+                                        case 3:{
+                                            
+                                        }
                                         case 4:break;
-                                        default: break;
+                                        default: break; 
                                     }
                                 }while(shouldcontinue);
                             }
