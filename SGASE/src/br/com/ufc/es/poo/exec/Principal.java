@@ -26,51 +26,128 @@ public class Principal {
         boolean shouldcontinue = true;
         ValidaCpfController x = new ValidaCpfController();
         int tipoUsuario = 1;
-            do{
-                System.out.println("BEM-VINDO AO SGASE");
-                System.out.println("digite o número do seu tipo de Usuário");
-                System.out.println("1 - Aluno");
-                System.out.println("2 - Professor");
-                System.out.println("3 - Admin");
-                System.out.println("4 - Coordenador");
-                tipoUsuario = Integer.parseInt(ler.nextLine());
-            }while(tipoUsuario > 4 || tipoUsuario < 1);
-            switch(tipoUsuario){
-                case 1: {
-                    do{
-                        System.out.println("Digite sua matricula:");
-                        String matricula = ler.nextLine();
-                        System.out.println("Digite sua senha:");
-                        String senha = ler.nextLine();
-                        if(alunosCadastrados.containsKey(matricula)){
-                            if(alunosCadastrados.get(matricula).equals(senha)){
-                                do{
-                                    System.out.println("Essas são as opções disponíveis para você:");
-                                    System.out.println("1 - Visualizar minha média");
-                                    System.out.println("2 - Visualizar média da turma");
-                                    System.out.println("3 - Conferir frequência");
-                                    System.out.println("4 - Sair");
-                                    int respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
-                                    switch(respostaOpcaoDisponivel){
-                                        case 1:{
-                                        };
-                                        case 2:break;
-                                        case 3:break;
-                                        case 4:break;
-                                        default: break;
+        boolean logado = false;
+        do{
+            System.out.println("BEM-VINDO AO SGASE");
+            System.out.println("digite o número do seu tipo de Usuário");
+            System.out.println("1 - Aluno");
+            System.out.println("2 - Professor");
+            System.out.println("3 - Admin");
+            System.out.println("4 - Coordenador");
+            tipoUsuario = Integer.parseInt(ler.nextLine());
+        }while(tipoUsuario > 4 || tipoUsuario < 1);
+        switch(tipoUsuario){
+            case 1: {
+                do{
+                    System.out.println("Digite sua matricula:");
+                    String matricula = ler.nextLine();
+                    System.out.println("Digite sua senha:");
+                    String senha = ler.nextLine();
+                    if(alunosCadastrados.containsKey(matricula)){
+                        if(alunosCadastrados.get(matricula).equals(senha)){
+                            do{
+                                System.out.println("Essas são as opções disponíveis para você:");
+                                System.out.println("1 - Visualizar minha média");
+                                System.out.println("2 - Visualizar média da turma");
+                                System.out.println("3 - Conferir frequência");
+                                System.out.println("4 - Sair");
+                                int respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
+                                switch(respostaOpcaoDisponivel){
+                                    case 1:{
+                                    };
+                                    case 2:break;
+                                    case 3:break;
+                                    case 4:break;
+                                    default: break;
+                                }
+                            }while(shouldcontinue);
+                        }
+                        else System.out.println("Senha incorreta");
+                    }else System.out.println("Você não tem cadastro. Contate um administrador para lhe cadastrar.");
+                }while(shouldcontinue);
+                break;
+            }
+            case 2:{
+                do{
+                    System.out.println("Digite seu CPF:");
+                    String cpf = ler.nextLine(); 
+                    x.metodoBom(cpf);//excessão
+                    System.out.println("Digite sua senha:");
+                    String senha = ler.nextLine();
+                    if(professoresCadastrados.containsKey(cpf)){
+                        if(professoresCadastrados.get(cpf).equals(senha)){
+                            Professor professorLogado = professoresCadastrados.get(cpf);
+                            boolean voltarMenuPrincipal = false;
+                            do{
+                                System.out.println("Essas são as opções disponíveis para você:");
+                                System.out.println("1 - Visualizar minhas turmas");
+                                System.out.println("2 - Cadastrar nota de trabalhos");
+                                System.out.println("3 - Cadastrar nota de provas");
+                                System.out.println("4 - Cadastrar faltas de aluno");
+                                System.out.println("5 - Cadastrar presenças de aluno");
+                                System.out.println("6 - Verificar frequência remunerada");
+                                System.out.println("7 - Fazer média da turma");
+                                System.out.println("8 - Fazer média de aluno");
+                                System.out.println("9 - Sair");
+                                int respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
+                                switch(respostaOpcaoDisponivel){
+                                    case 1:{
+                                        System.out.println("======MINHAS TURMAS=======");
+                                        for (Turma turma : turmasCadastradas) {
+                                           if(turma.getProfessor(professorLogado)) 
+                                              System.out.println(" - " +turma.getCurso());
+                                        }
+                                    };
+                                    case 2:{
                                     }
-                                }while(shouldcontinue);
-                            }
-                            else System.out.println("Senha incorreta");
-                        }else System.out.println("Você não tem cadastro. Contate um administrador para lhe cadastrar.");
-                    }while(shouldcontinue);
-                    break;
+                                    case 3:break;
+                                    case 4:voltarMenuPrincipal = true;
+                                    default: break;
+                                }
+                            }while(voltarMenuPrincipal == false);
+                        }else System.out.println("Senha incorreta");
+                    }else System.out.println("Cadastro inexistente. Contate um administrador e realize seu cadastro.");
+
+                }while(shouldcontinue);
+                break;
+            }
+            case 3:{
+                do{
+                    if(!logado){
+                    System.out.println("Digite seu CPF:");
+                    String cpf = ler.nextLine();
+                    System.out.println("Digite sua senha:");
+                    String senha = ler.nextLine();
+                    if(administradoresCadastrados.containsKey(cpf)){
+                        if(administradoresCadastrados.get(cpf).getSenha().equals(senha))
+                            logado = true;
+                        else{
+                            System.out.println("Senha incorreta");
+                            for (String key : administradoresCadastrados.keySet()) {
+                                    //Capturamos o valor a partir da chave
+                                    Administrador value = administradoresCadastrados.get(key);
+                                    System.out.println(key + " = " + value);
+                             }
+                        }
+                    }else{
+                        System.out.println("Você não tem cadastro. Deseja se cadastrar?!(1-sim 2-não");
+                        if(!(Integer.parseInt(ler.nextLine()) == 1)) break;
+                        System.out.println("Digite seu nome: ");
+                        String nome = ler.nextLine();
+                        System.out.println("Digite seu CPF");
+                        cpf = ler.nextLine();
+                        System.out.println("Digite seu email");
+                        String email = ler.nextLine();
+                        System.out.println("Digite sua senha");
+                        senha = ler.nextLine();
+                        administradoresCadastrados.put(cpf, new Administrador(cpf, nome, email,senha));
+                        System.out.println(administradoresCadastrados.get(cpf).getSenha());
+                    }
                 }
                 case 2:{
                     do{
                         System.out.println("Digite seu CPF:");
                         String cpf = ler.nextLine(); 
-                        x.metodoBom(cpf);//excessão
                         System.out.println("Digite sua senha:");
                         String senha = ler.nextLine();
                         if(professoresCadastrados.containsKey(cpf)){
@@ -154,48 +231,18 @@ public class Principal {
                                                 }
                                                 System.out.println((i-1) + " - " +turmasCadastradas.get(i).getCurso());
                                             }
-                                            turmaEscolhida = Integer.parseInt(ler.nextLine());
-                                            }while(turmaEscolhida > turmasCadastradas.size() || turmaEscolhida<1);
-                                            Random geradorMatricula = new Random();
-                                            FrequenciaRemunerada[] frequenciaRemunerada = null;
-                                            CursosOfertados cursoMatriculado = null;
-                                            alunosCadastrados.put(cpf, new AlunoBolsista(cpf, senha, email, nome,geradorMatricula.nextInt(10), 0, 0, 0, 0, 0,frequenciaRemunerada,cursoMatriculado,0));
-                                            System.out.println("Informe ao aluno os seus dadoos que foram cadastrados:");
-                                            System.out.println(alunosCadastrados.get(cpf).toString());
-                                            break;
-                                        }
-                                        case 3:{
-                                            
-                                        }
-                                        case 4:break;
-                                        default: break; 
+
                                     }
-                                }while(shouldcontinue);
-                            }
-                            else{
-                                System.out.println("Senha incorreta");
-                                for (String key : administradoresCadastrados.keySet()) {
-                                        //Capturamos o valor a partir da chave
-                                        Administrador value = administradoresCadastrados.get(key);
-                                        System.out.println(key + " = " + value);
-                                 }
-                            }
-                        }else{
-                            System.out.println("Você não tem cadastro. Deseja se cadastrar?!(1-sim 2-não");
-                            if(!(Integer.parseInt(ler.nextLine()) == 1)) break;
-                            System.out.println("Digite seu nome: ");
-                            String nome = ler.nextLine();
-                            System.out.println("Digite seu CPF");
-                            cpf = ler.nextLine();
-                            System.out.println("Digite seu email");
-                            String email = ler.nextLine();
-                            System.out.println("Digite sua senha");
-                            senha = ler.nextLine();
-                            administradoresCadastrados.put(cpf, new Administrador(cpf, nome, email,senha));
-                            System.out.println(administradoresCadastrados.get(cpf).getSenha());
-                        }
-                    }while(shouldcontinue);
-                }
-            }
+                                    case 3:{
+
+                                    }
+                                    case 4:break;
+                                    default: break; 
+                                }
+                            }while(!voltarMenuPrincipal);
+            }while(logado);
+        }
+        }
     }
 }
+                                
