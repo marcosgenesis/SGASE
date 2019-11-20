@@ -132,6 +132,7 @@ public class Principal {
                                             String email = ler.nextLine();
                                             System.out.println("Digite o CPF do professor");
                                             cpf = ler.nextLine();
+                                            x.metodoBom(cpf);
                                             professoresCadastrados.put(cpf, new Professor(cpf, senha, email, nome));
                                             break;
                                         }
