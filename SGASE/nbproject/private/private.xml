@@ -5,11 +5,10 @@
         <group>
             <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/Turma.java</file>
             <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/AlunoBolsista.java</file>
-            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/AuxiliarCozinha.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/Usuario.java</file>
             <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/Administrador.java</file>
-            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/CursosOfertados.java</file>
-            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/Artesanato.java</file>
             <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/Professor.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/FrequenciaRemunerada.java</file>
             <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/exec/Principal.java</file>
         </group>
     </open-files>

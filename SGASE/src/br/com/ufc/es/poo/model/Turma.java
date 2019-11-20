@@ -9,7 +9,7 @@ public class Turma {
     private CursosOfertados curso;
     private double mediaGeralTurma;
     private ArrayList<AlunoBolsista> participantes;
-
+    private Professor professores[];
    
     public Turma(){
         //
@@ -21,8 +21,25 @@ public class Turma {
         this.mediaGeralTurma = mediaGeralTurma;
         this.participantes = participantes;
     }
-    
-  
+
+    public Professor[] getProfessores() {
+        return professores;
+    }
+
+    public void setProfessores(Professor professorNovo, int index) {
+        this.professores[index] = professorNovo;
+    }
+    public boolean getProfessor(Professor professorProcurado) {
+        boolean achou = false;
+        for (Professor professor : professores) {
+            if(professor.getCpf().equals(professorProcurado.getCpf())) achou=true;
+        } 
+        return achou;
+    }
+
+    public void setProfessor(Professor[] professores) {
+        this.professores = professores;
+    }
     public ArrayList<AlunoBolsista> getParticipantes() {
         return participantes;
     }

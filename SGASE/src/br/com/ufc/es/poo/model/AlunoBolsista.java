@@ -15,21 +15,17 @@ public class AlunoBolsista extends Usuario {
     protected double notaTrabalho [] = new double[2];
     protected double mediaAluno;
     protected FrequenciaRemunerada frequenciaRemunerada []= new FrequenciaRemunerada [12];
-    protected String cursoMatriculado;
+    protected CursosOfertados cursoMatriculado;
     protected double mediaTurma;
+    
     public AlunoBolsista(){}
-    public AlunoBolsista(String cpf, String senha, String email, String nome, int matricula, String turno, int presenca[], int faltas[], double notaProva[], double notaTrabalho[],double mediaAluno, FrequenciaRemunerada frequenciaRemunerada[], CursosOfertados cursomatriculado, double mediaTurma) {
+    public AlunoBolsista(String cpf, String senha, String email, String nome, 
+            int matricula,CursosOfertados cursoMatriculado) {
         super(cpf,nome,email,senha);
         this.matricula = matricula;
-        this.turno = turno;
-        this.presenca = presenca;
-        this.faltas = faltas;
-        this.notaProva = notaProva;
-        this.notaTrabalho = notaTrabalho;
-        this.mediaAluno = mediaAluno;
-        this.frequenciaRemunerada = frequenciaRemunerada;
+        this.mediaAluno = 0;
         this.cursoMatriculado = cursoMatriculado;
-        this.mediaTurma = mediaTurma;
+        
         }
 
     public double getMediaAluno() {
@@ -49,10 +45,10 @@ public class AlunoBolsista extends Usuario {
     }
 
     public String getCursoMatriculado() {
-        return cursoMatriculado;
+        return cursoMatriculado.getNome();
     }
 
-    public void setCursoMatriculado(String cursoMatriculado) {
+    public void setCursoMatriculado(CursosOfertados cursoMatriculado) {
         this.cursoMatriculado = cursoMatriculado;
     }
 
