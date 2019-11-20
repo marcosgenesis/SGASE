@@ -20,12 +20,16 @@ public class AlunoBolsista extends Usuario {
     
     public AlunoBolsista(){}
     public AlunoBolsista(String cpf, String senha, String email, String nome, 
-            int matricula,CursosOfertados cursoMatriculado) {
+            int matricula,String turno, int presenca, int faltas, double notaProva, double notaTrabalho,double mediaAluno,FrequenciaRemunerada frequenciaRmunerada,CursosOfertados cursoMatriculado, double mediaTurma) {
         super(cpf,nome,email,senha);
         this.matricula = matricula;
+        this.turno = turno;
+        this.notaProva = this.notaProva;
+        this.notaTrabalho = this.notaTrabalho;
         this.mediaAluno = 0;
+        this.frequenciaRemunerada = frequenciaRemunerada;
         this.cursoMatriculado = cursoMatriculado;
-        
+        this.mediaTurma = mediaTurma;
         }
 
     public double getMediaAluno() {
@@ -125,7 +129,6 @@ public class AlunoBolsista extends Usuario {
         return "AlunoBolsista{" + "matricula=" + matricula + ", turno=" + turno + ", presenca=" + presenca + ", faltas=" + faltas + ", notaProva=" + notaProva + ", notaTrabalho=" + notaTrabalho + ", mediaAluno=" + mediaAluno + ", frequenciaRemunerada=" + frequenciaRemunerada + ", cursoMatriculado=" + cursoMatriculado + ", mediaTurma=" + mediaTurma + '}';
     }
 
-   
     
  
 
