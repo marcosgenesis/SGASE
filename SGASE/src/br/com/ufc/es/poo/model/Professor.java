@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Professor extends Usuario {
 
- 
+    ArrayList <Projeto> projetos = new ArrayList();
     public Professor(String cpf, String senha, String email, String nome) {
         super(cpf,nome,email,senha);
     }
@@ -73,5 +73,9 @@ public class Professor extends Usuario {
         return mediaGeral;
     }
    
-    
+    public void criaProjeto(String nome, CursosOfertados areaDeConhecimento){
+        ArrayList <AlunoBolsista> alunos = new ArrayList();
+        Projeto projeto = new Projeto(  nome,  areaDeConhecimento,  alunos,  this); //como está na classe professor, ele envia pro objeto que tá criando
+        this.projetos.add(projeto);
+    }
 }
