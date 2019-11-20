@@ -28,6 +28,7 @@ public class Principal {
                 System.out.println("1 - Aluno");
                 System.out.println("2 - Professor");
                 System.out.println("3 - Admin");
+                System.out.println("4 - Coordenador");
                 tipoUsuario = Integer.parseInt(ler.nextLine());
             }while(tipoUsuario > 4 || tipoUsuario < 1);
             switch(tipoUsuario){
@@ -42,7 +43,7 @@ public class Principal {
                                 do{
                                     System.out.println("Essas são as opções disponíveis para você:");
                                     System.out.println("1 - Visualizar minha média");
-                                    System.out.println("2 - Visualizar meu curso");
+                                    System.out.println("2 - Visualizar méia da turma");
                                     System.out.println("3 - Conferir frequência");
                                     System.out.println("4 - Sair");
                                     int respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
@@ -73,9 +74,14 @@ public class Principal {
                                 do{
                                     System.out.println("Essas são as opções disponíveis para você:");
                                     System.out.println("1 - Visualizar minhas turmas");
-                                    System.out.println("2 - Conferir frequência das turmas");
-                                    System.out.println("3 - Conferir frequência");
-                                    System.out.println("4 - Sair");
+                                    System.out.println("2 - Cadastrar nota de trabalhos");
+                                    System.out.println("3 - Cadastrar nota de provas");
+                                    System.out.println("4 - Cadastrar faltas de aluno");
+                                    System.out.println("5 - Cadastrar presenças de aluno");
+                                    System.out.println("6 - Verificar frequência remunerada");
+                                    System.out.println("7 - Fazer média da turma");
+                                    System.out.println("8 - Fazer média de aluno");
+                                    System.out.println("9 - Sair");
                                     int respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
                                     switch(respostaOpcaoDisponivel){
                                         case 1:{
@@ -107,7 +113,7 @@ public class Principal {
                         if(administradoresCadastrados.containsKey(cpf)){
                             if(administradoresCadastrados.get(cpf).getSenha().equals(senha)){
                                 do{
-                                    System.out.println("Essas são as opções disponíveis para você:");
+                                    System.out.println("Essas são as opções disponíveis para você:"); //AQUI DEVE SER FEITO O CRUD DE COORDENADOR
                                     System.out.println("1 - Cadastrar Professor");
                                     System.out.println("2 - Cadastrar Aluno");
                                     System.out.println("3 - Conferir frequência");
