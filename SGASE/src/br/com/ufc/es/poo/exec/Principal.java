@@ -70,7 +70,6 @@ public class Principal {
                     do{
                         System.out.println("Digite seu CPF:");
                         String cpf = ler.nextLine(); 
-                        x.metodoBom(cpf);//excessão
                         System.out.println("Digite sua senha:");
                         String senha = ler.nextLine();
                         if(professoresCadastrados.containsKey(cpf)){
@@ -132,7 +131,6 @@ public class Principal {
                                             String email = ler.nextLine();
                                             System.out.println("Digite o CPF do professor");
                                             cpf = ler.nextLine();
-                                            x.metodoBom(cpf);
                                             professoresCadastrados.put(cpf, new Professor(cpf, senha, email, nome));
                                             break;
                                         }
