@@ -1,8 +1,11 @@
 
 package br.com.ufc.es.poo.exec;
 
+import br.com.ufc.es.poo.controller.ValidaCpfController;
 import br.com.ufc.es.poo.model.Administrador;
 import br.com.ufc.es.poo.model.AlunoBolsista;
+import br.com.ufc.es.poo.model.CursosOfertados;
+import br.com.ufc.es.poo.model.FrequenciaRemunerada;
 import br.com.ufc.es.poo.model.Professor;
 import br.com.ufc.es.poo.model.Turma;
 import java.util.ArrayList;
@@ -21,6 +24,7 @@ public class Principal {
         ArrayList<Turma> turmasCadastradas = new ArrayList();
         Scanner ler = new Scanner(System.in);
         boolean shouldcontinue = true;
+        ValidaCpfController x = new ValidaCpfController();
         int tipoUsuario = 1;
             do{
                 System.out.println("BEM-VINDO AO SGASE");
@@ -43,7 +47,7 @@ public class Principal {
                                 do{
                                     System.out.println("Essas são as opções disponíveis para você:");
                                     System.out.println("1 - Visualizar minha média");
-                                    System.out.println("2 - Visualizar méia da turma");
+                                    System.out.println("2 - Visualizar média da turma");
                                     System.out.println("3 - Conferir frequência");
                                     System.out.println("4 - Sair");
                                     int respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
@@ -65,7 +69,8 @@ public class Principal {
                 case 2:{
                     do{
                         System.out.println("Digite seu CPF:");
-                        String cpf = ler.nextLine();
+                        String cpf = ler.nextLine(); 
+                        x.metodoBom(cpf);//excessão
                         System.out.println("Digite sua senha:");
                         String senha = ler.nextLine();
                         if(professoresCadastrados.containsKey(cpf)){
@@ -121,7 +126,7 @@ public class Principal {
                                     int respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
                                     switch(respostaOpcaoDisponivel){
                                         case 1:{
-                                            System.out.println("Digite o nome do professor");
+                                            System.out.println("Digite o nome do professor"); 
                                             String nome = ler.nextLine();
                                             System.out.println("Digite o email do professor");
                                             String email = ler.nextLine();
@@ -152,7 +157,9 @@ public class Principal {
                                             turmaEscolhida = Integer.parseInt(ler.nextLine());
                                             }while(turmaEscolhida > turmasCadastradas.size() || turmaEscolhida<1);
                                             Random geradorMatricula = new Random();
-                                            alunosCadastrados.put(cpf, new AlunoBolsista(cpf, senha, email, nome,geradorMatricula.nextInt(10), turmasCadastradas.get(turmaEscolhida).getCurso()));
+                                            FrequenciaRemunerada[] frequenciaRemunerada = null;
+                                            CursosOfertados cursoMatriculado = null;
+                                            alunosCadastrados.put(cpf, new AlunoBolsista(cpf, senha, email, nome,geradorMatricula.nextInt(10), 0, 0, 0, 0, 0,frequenciaRemunerada,cursoMatriculado,0));
                                             System.out.println("Informe ao aluno os seus dadoos que foram cadastrados:");
                                             System.out.println(alunosCadastrados.get(cpf).toString());
                                             break;
