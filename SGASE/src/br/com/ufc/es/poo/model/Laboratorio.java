@@ -30,9 +30,13 @@ public class Laboratorio extends LocalAula {
         this.computadorlivre = computadorlivre;
     }
     
-    public boolean verificaComputadores() { //metodo
-        // TODO implement here
-        return false;
+    public int verificaComputadores(boolean computadorLivre) { //metodo
+        int cont = 0 ;
+        for(int i=0; i < 30; i++){
+            computadores.add(i);
+            cont ++;  
+        }
+       return cont;
     }
 
     @Override
