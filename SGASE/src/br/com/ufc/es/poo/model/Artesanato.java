@@ -7,7 +7,6 @@ import java.util.ArrayList;
 public abstract class Artesanato extends CursosOfertados {
 
     public Atelie local;
-    
     public Artesanato(ArrayList<Professor> professores,String nome,int cargaHoraria) {
         super(professores, nome, cargaHoraria);
     }

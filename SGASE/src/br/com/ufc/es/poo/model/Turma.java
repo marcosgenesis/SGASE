@@ -10,16 +10,16 @@ public class Turma {
     private double mediaGeralTurma;
     private ArrayList<AlunoBolsista> participantes;
     private Professor professores[];
+    private int identificacao;
    
     public Turma(){
         //
     }
 
-    public Turma(AlunoBolsista[] alunos, CursosOfertados curso, double mediaGeralTurma, ArrayList<AlunoBolsista> participantes) {
-        this.alunos = alunos;
+    public Turma(CursosOfertados curso,int identificacao) {
         this.curso = curso;
-        this.mediaGeralTurma = mediaGeralTurma;
-        this.participantes = participantes;
+        this.mediaGeralTurma = 0;
+        this.identificacao = identificacao;
     }
 
     public Professor[] getProfessores() {

@@ -20,16 +20,11 @@ public class AlunoBolsista extends Usuario {
     
     public AlunoBolsista(){}
     public AlunoBolsista(String cpf, String senha, String email, String nome, 
-            int matricula, int presenca, int faltas, double notaProva, double notaTrabalho,double mediaAluno,FrequenciaRemunerada frequenciaRemunerada[],CursosOfertados cursoMatriculado, double mediaTurma) {
+            int matricula, double mediaAluno, CursosOfertados cursoMatriculado) {
         super(cpf,nome,email,senha);
         this.matricula = matricula;
-        this.turno = turno;
-        this.notaProva = this.notaProva;
-        this.notaTrabalho = this.notaTrabalho;
         this.mediaAluno = 0;
-        this.frequenciaRemunerada = frequenciaRemunerada;
         this.cursoMatriculado = cursoMatriculado;
-        this.mediaTurma = mediaTurma;
         }
 
     public double getMediaAluno() {

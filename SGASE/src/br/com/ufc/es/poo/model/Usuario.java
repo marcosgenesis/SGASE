@@ -10,7 +10,6 @@ public class Usuario {
     protected String senha;
     public Usuario(){}
     public Usuario(String cpf,String nome, String email,String senha) {
-        super();
         this.cpf = cpf;
         this.email = email;
         this.nome = nome;
@@ -52,8 +51,9 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "cpf=" + cpf + ", email=" + email + ", nome=" + nome + '}';
+        return "cpf=" + cpf + ", email=" + email + ", nome=" + nome + ", senha=" + senha ;
     }
+
 
     
 
