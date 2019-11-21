@@ -30,9 +30,28 @@ public class Atelie extends LocalAula {
         this.materiais = materiais;
     }
 
-    public boolean verificaMateriais() { //método
-        // TODO implement here
-        return false;
+    public String verificaMateriais() { //método
+        String nomeMaterial = "Vazio";
+        for(int i=0; i < materiais.size(); i++){
+            if(i == 0){
+                nomeMaterial = "";
+            }
+             nomeMaterial += materiais.get(i)+"\n";
+        }
+        return nomeMaterial;
+    }
+    public void adicionaMaterial(String material){
+        boolean materiallivre = true;
+        for(int i=0; i < materiais.size(); i++){
+            if( materiais.get(i).equals(material)){
+                materiallivre = false;   
+            }
+        }
+        if(materiallivre){
+            materiais.add(material);
+        }else{
+            System.out.println("esse material já existe no inventário");
+        }
     }
     
        @Override

@@ -14,12 +14,21 @@ public class Cozinha extends LocalAula {
         this.materiais = materiais;
     }
 
-    public boolean verificaIngredientes() {
-        return false;
+    public void verificaIngrediente(String ingrediente){
+        boolean materiallivre = true;
+        for(int i=0; i < ingredientes.size(); i++){
+            if( ingredientes.get(i).equals(ingrediente)){
+                materiallivre = false;   
+            }
+        }
+        if(materiallivre){
+            ingredientes.add(ingrediente);
+        }else{
+            System.out.println("esse material já existe no inventário");
+        }
     }
-
-    public boolean verificaMateriais() {
-        return false;
-    }
+   
+    
+    
     
 }
