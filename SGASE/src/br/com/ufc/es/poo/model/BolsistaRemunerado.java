@@ -10,8 +10,6 @@ public class BolsistaRemunerado extends AlunoBolsista {
     private int numeroConta;
     private double bolsa;
 
-    
-
    
     public void preencheFrequencia(FrequenciaRemunerada frequenciaRemunerada[]) { //preenche os atributos de FrequenciaRemunerada
         Scanner ler = new Scanner(System.in);

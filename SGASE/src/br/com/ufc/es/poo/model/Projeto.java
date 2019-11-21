@@ -9,9 +9,9 @@ public class Projeto {
     private ArrayList<AlunoBolsista> alunos;
     private Professor professorOrientador;
     
-    public Projeto(String nome, CursosOfertados arearDeConhecimento, ArrayList<AlunoBolsista> alunos, Professor professorOrientador) {
+    public Projeto(String nome, CursosOfertados areaDeConhecimento, ArrayList<AlunoBolsista> alunos, Professor professorOrientador) {
         this.nome = nome;
-        this.areaDeConhecimento = arearDeConhecimento;
+        this.areaDeConhecimento = areaDeConhecimento;
         this.alunos = alunos;
         this.professorOrientador = professorOrientador;
     }
