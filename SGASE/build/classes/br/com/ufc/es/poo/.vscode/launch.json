@@ -1,0 +1,10 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Principal",
+      "request": "launch",
+      "mainClass": "br.com.ufc.es.poo.exec.Principal"
+    }
+  ]
+}
