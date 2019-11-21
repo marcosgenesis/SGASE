@@ -10,8 +10,7 @@ public abstract class CursosOfertados {
     private String nome;
     private int cargaHoraria;
  
-    public CursosOfertados(ArrayList<Professor> professores,String nome,int cargaHoraria) {
-        this.professores = professores;
+    public CursosOfertados(String nome,int cargaHoraria) {
         this.nome = nome;
         this.cargaHoraria = cargaHoraria;
     }

@@ -14,7 +14,7 @@ public abstract class AuxiliarCozinha extends CursosOfertados {
       public double mediaCurso(ArrayList participantes, AlunoBolsista p){ 
         double mediaGeral = 0;
         for(int i=0; i < participantes.size();i++){
-            mediaGeral += p.getMediaAluno();
+            //mediaGeral += p.getMediaAluno();
         }
         return mediaGeral;
     }

@@ -26,6 +26,9 @@ public class Principal {
         int tipoUsuario = 1;
         int quantidadeTurmas = 0;
         boolean logado = false;
+        //Base da dados prévia
+        alunosCadastrados.put("000", new AlunoBolsista("000", "000", "mmmm", "marcos", 120, "Artesanato"));
+
         do {
             System.out.println("BEM-VINDO AO SGASE");
             System.out.println("digite o número do seu tipo de Usuário");
@@ -43,7 +46,8 @@ public class Principal {
                 System.out.println("Digite sua senha:");
                 String senha = ler.nextLine();
                 if (alunosCadastrados.containsKey(matricula)) {
-                    if (alunosCadastrados.get(matricula).equals(senha)) {
+                    if (alunosCadastrados.get(matricula).getSenha().equals(senha)) {
+                        AlunoBolsista alunoLogado = alunosCadastrados.get(matricula);
                         do {
                             System.out.println("Essas são as opções disponíveis para você:");
                             System.out.println("1 - Visualizar minha média");
@@ -53,8 +57,8 @@ public class Principal {
                             int respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
                             switch (respostaOpcaoDisponivel) {
                             case 1: {
+                                System.out.print("Sua média é: ");
                             }
-                                ;
                             case 2:
                                 break;
                             case 3:
@@ -162,7 +166,7 @@ public class Principal {
                         System.out.println("4 - sair");
                         respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
                         
-                    } while (respostaOpcaoDisponivel < 4 && respostaOpcaoDisponivel >1);
+                    } while (respostaOpcaoDisponivel > 3 || respostaOpcaoDisponivel < 1);
                     
                     switch (respostaOpcaoDisponivel){
                         case 1:{
@@ -174,14 +178,24 @@ public class Principal {
                             String cpf = ler.nextLine();
                             System.out.println("Senha do aluno:");
                             String senha = ler.nextLine();
-                            if (alunosCadastrados.isEmpty()){
+                            if (turmasCadastradas.isEmpty()){
                                 System.out.println("Nenhuma turma cadastrada ainda. Cadastre primeiro uma turma.");
                                 break;
                             }else{
-                                System.out.println("Turmas disponíveis, escoha o id qda turma que quer cadastrar o aluno.");
-                                for (int i = 1; i < turmasCadastradas.size(); i++) {
-                                    System.out.println("ID: " + i + " - " + turmasCadastradas.get(i).getCurso());
-                                }
+                                int opcaoTurma=0;
+                                do{
+                                    System.out.println("Turmas disponíveis, escoha o id qda turma que quer cadastrar o aluno.");
+                                    for (Turma turmasCadastrada : turmasCadastradas) {
+                                        System.out.println("ID " + turmasCadastrada.getIdentificacao());
+                                    }
+                                    opcaoTurma = Integer.parseInt(ler.nextLine());
+                                }while(opcaoTurma > turmasCadastradas.size() || opcaoTurma < 0);
+                                Turma turmaEscolhida = turmasCadastradas.get(opcaoTurma);
+                                alunosCadastrados.put(cpf, new AlunoBolsista(cpf, senha, email, nome, (Integer.parseInt(cpf)/10),"artesanato"));
+                                AlunoBolsista alunocadastrado = alunosCadastrados.get(cpf);
+                                turmaEscolhida.setAluno(alunocadastrado);
+                                System.out.println("Aluno Cadastrado!");
+                                break;
                             }
                         }
                         case 2:{
@@ -197,7 +211,7 @@ public class Principal {
                             System.out.println("Os dados do professor cadastrado são:");
                             System.out.println(professoresCadastrados.get(cpf).toString());
                             System.out.println("Repasse os dados para o administrador se necessário.");
-                        }
+                        }break;
                         case 3:{
                             System.out.println("Cursos disponíveis:");
                             System.out.println("1 - Artesanato");
@@ -208,18 +222,11 @@ public class Principal {
                                 cursoEscolhido = Integer.parseInt(ler.nextLine());
                                 if (cursoEscolhido < 3 && cursoEscolhido >= 1){
                                     switch(cursoEscolhido){
-                                        case 1: 
-                                            turmasCadastradas.add(new Turma(new Artesanato(null, null, tipoUsuario) {
-                                                
-                                                @Override
-                                                public double mediaAluno(AlunoBolsista p, double[] notaTrabalho, double[] notaProva) {
-                                                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                                                }
-                                            }, quantidadeTurmas));
+                                        case 1:
+                                            turmasCadastradas.add(new Turma(quantidadeTurmas,new Artesanato("Artesanato", tipoUsuario)));
+                                            System.out.println(turmasCadastradas.get(0));
                                     }
                                 }
-                                
-                                
                             } catch (NumberFormatException err) {
                                 System.out.println("Erro! digite novamente!");
                             }

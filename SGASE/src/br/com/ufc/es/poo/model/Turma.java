@@ -8,27 +8,26 @@ public class Turma {
     public AlunoBolsista alunos [];
     private CursosOfertados curso;
     private double mediaGeralTurma;
-    private ArrayList<AlunoBolsista> participantes;
+    private ArrayList<AlunoBolsista> participantes = new ArrayList();
     private Professor professores[];
     private int identificacao;
-   
+    private int numeroAlunos = 0;
     public Turma(){
-        //
     }
-
-    public Turma(CursosOfertados curso,int identificacao) {
-        this.curso = curso;
+    public Turma(int identificacao,CursosOfertados curso) {
         this.mediaGeralTurma = 0;
+        this.curso = curso;
         this.identificacao = identificacao;
     }
 
-    public Professor[] getProfessores() {
-        return professores;
+    public int getIdentificacao() {
+        return identificacao;
     }
 
-    public void setProfessores(Professor professorNovo, int index) {
-        this.professores[index] = professorNovo;
+    public void setIdentificacao(int identificacao) {
+        this.identificacao = identificacao;
     }
+    
     public boolean getProfessor(Professor professorProcurado) {
         boolean achou = false;
         for (Professor professor : professores) {
@@ -47,15 +46,7 @@ public class Turma {
     public void setParticipantes(ArrayList<AlunoBolsista> participantes) {
         this.participantes = participantes;
     }
-    
-    public AlunoBolsista[] getAlunos() {
-        return alunos;
-    }
-
-    public void setAlunos(AlunoBolsista[] alunos) {
-        this.alunos = alunos;
-    }
-
+ 
     public double getMediaGeralTurma() {
         return mediaGeralTurma;
     }
@@ -69,19 +60,19 @@ public class Turma {
     }
 
     public AlunoBolsista getAluno(int index) {
-        return alunos[index];
+        return participantes.get(index);
     }
 
-    public void setAluno(AlunoBolsista alunoNovo, int index) {
-        this.alunos[index] = alunoNovo;
+    public void setAluno(AlunoBolsista alunoNovo) {
+        participantes.add(alunoNovo);
     }
     
     public void setAllAlunos(AlunoBolsista[] alunos) {
         this.alunos = alunos;
     }
 
-    public CursosOfertados getCurso() {
-        return curso;
+    public String getCurso() {
+        return this.curso.getNome();
     }
 
     @Override
