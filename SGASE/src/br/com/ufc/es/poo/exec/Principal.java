@@ -33,8 +33,12 @@ public class Principal {
                 System.out.println("2 - Professor");
                 System.out.println("3 - Admin");
                 System.out.println("4 - Coordenador");
-                tipoUsuario = Integer.parseInt(ler.nextLine());
-            }while(tipoUsuario > 4 || tipoUsuario < 1);
+                try{
+                    tipoUsuario = Integer.parseInt(ler.nextLine());
+                }catch(NumberFormatException ex){
+                    System.out.println("Digite um número por favor");
+                }
+                }while(tipoUsuario > 4 || tipoUsuario < 1);
             switch(tipoUsuario){
                 case 1: {
                     do{
@@ -50,7 +54,13 @@ public class Principal {
                                     System.out.println("2 - Visualizar média da turma");
                                     System.out.println("3 - Conferir frequência");
                                     System.out.println("4 - Sair");
-                                    int respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
+                                    int respostaOpcaoDisponivel = 0;
+                                    try{
+                                        respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
+                                    }catch(NumberFormatException ex){
+                                        System.out.println("Digite um número por favor");
+                                    }
+                                    
                                     switch(respostaOpcaoDisponivel){
                                         case 1:{
                                         };
@@ -86,7 +96,13 @@ public class Principal {
                                     System.out.println("7 - Fazer média da turma");
                                     System.out.println("8 - Fazer média de aluno");
                                     System.out.println("9 - Sair");
-                                    int respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
+                                    
+                                    int respostaOpcaoDisponivel = 0;
+                                    try{
+                                        respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
+                                    }catch(NumberFormatException ex){
+                                        System.out.println("Digite um número por favor");
+                                    }
                                     switch(respostaOpcaoDisponivel){
                                         case 1:{
                                             System.out.println("======MINHAS TURMAS=======");
