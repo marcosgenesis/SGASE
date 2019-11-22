@@ -64,12 +64,12 @@ public class Professor extends Usuario {
        return false;
    }
    
-      public double mediaTurma(ArrayList participantes, AlunoBolsista p){ //método concreto
+      public double getMediaTurma(ArrayList participantes, CursosOfertados p){ //método concreto
         double mediaGeral = 0;
         for(int i=0; i < participantes.size();i++){
-            //mediaGeral += p.getMediaAluno();
+            mediaGeral += p.mediaAluno((AlunoBolsista) participantes.get(i));
         }
-        //p.setMediaTurma(mediaGeral);
+        
         return mediaGeral;
     }
    
