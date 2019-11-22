@@ -52,9 +52,9 @@ public class AlunoBolsista extends Usuario {
         System.out.println("A media do aluno é " +x.mediaAluno(this));
     }
 
-    //public void visualizaMediaTurma() {
-      //  System.out.println(p.getMediaTurma());
-    
+    public void visualizaMediaTurma(Professor p, ArrayList participantes, CursosOfertados x) {
+       System.out.println(p.getMediaTurma(participantes,x));
+    }
     
 
     @Override
