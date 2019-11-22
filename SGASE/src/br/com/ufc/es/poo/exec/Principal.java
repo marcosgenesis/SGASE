@@ -69,8 +69,10 @@ public class Principal {
                                 alunoLogado.visualizaMediaAluno(alunoLogado.getCursoMatriculado());
                             }
                             case 2:
+                                alunoLogado.visualizaMediaTurma(turmasCadastradas, alunoLogado.getCursoMatriculado());
                                 break;
                             case 3:
+                                alunoLogado.visualizarPresenca();
                                 break;
                             case 4:
                                 logado[0] = false;
