@@ -52,7 +52,7 @@ public abstract class CursosOfertados {
     }
     
     
-    public abstract double mediaAluno(AlunoBolsista p, double notaTrabalho[], double notaProva[]); //métoo abstrato
+    public abstract double mediaAluno(AlunoBolsista p); //métoo abstrato
 
     @Override
     public String toString() {

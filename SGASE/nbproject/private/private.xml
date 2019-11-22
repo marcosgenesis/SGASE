@@ -3,34 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< Updated upstream
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/Turma.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/AlunoBolsista.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/AuxiliarCozinha.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/CursosOfertados.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/Usuario.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/Artesanato.java</file>
+            <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/model/Professor.java</file>
             <file>file:/C:/Users/Genesis/Documents/SGASE/SGASE/src/br/com/ufc/es/poo/exec/Principal.java</file>
-=======
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/Professor.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/Projeto.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/CursosOfertados.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/impl/CoordenadorImpl.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/Artesanato.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/exception/ValidaCpfException.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/FrequenciaRemunerada.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/BolsistaRemunerado.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/Turma.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/Atelie.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/Laboratorio.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/AuxiliarCozinha.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/AlunoBolsista.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/InformaticaBasica.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/Administrador.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/BolsistaVoluntario.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/Cozinha.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/exec/Principal.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/Interfaces/Coordenador.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/controller/ValidaCpfController.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/Usuario.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/Endereco.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/Telefone.java</file>
-            <file>file:/C:/Users/Gustavo/Documents/NetBeansProjects/SGASE/SGASE/src/br/com/ufc/es/poo/model/LocalAula.java</file>
->>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>

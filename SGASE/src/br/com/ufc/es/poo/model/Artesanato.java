@@ -23,8 +23,9 @@ public class Artesanato extends CursosOfertados {
     }
 
     @Override
-    public double mediaAluno(AlunoBolsista p, double[] notaTrabalho, double[] notaProva) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double mediaAluno(AlunoBolsista p) {
+        double media = (p.getNotaProva(0) + p.getNotaProva(1) + p.getNotaTrabalho(0) + p.getNotaTrabalho(1))/p.notaProva.length + p.notaTrabalho.length;
+        return media;
     }
     
 

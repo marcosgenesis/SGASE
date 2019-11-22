@@ -9,7 +9,7 @@ public class Turma {
     private CursosOfertados curso;
     private double mediaGeralTurma;
     private ArrayList<AlunoBolsista> participantes = new ArrayList();
-    private Professor professores[];
+    private ArrayList<Professor> professores = new ArrayList();
     private int identificacao;
     private int numeroAlunos = 0;
     public Turma(){
@@ -36,15 +36,15 @@ public class Turma {
         return achou;
     }
 
-    public void setProfessor(Professor[] professores) {
-        this.professores = professores;
+    public void setProfessor(Professor professor) {
+        this.professores.add(professor);
     }
     public ArrayList<AlunoBolsista> getParticipantes() {
         return participantes;
     }
 
-    public void setParticipantes(ArrayList<AlunoBolsista> participantes) {
-        this.participantes = participantes;
+    public void setParticipantes(AlunoBolsista participante) {
+        this.participantes.add(participante);
     }
  
     public double getMediaGeralTurma() {
@@ -71,8 +71,8 @@ public class Turma {
         this.alunos = alunos;
     }
 
-    public String getCurso() {
-        return this.curso.getNome();
+    public CursosOfertados getCurso() {
+        return this.curso;
     }
 
     @Override
