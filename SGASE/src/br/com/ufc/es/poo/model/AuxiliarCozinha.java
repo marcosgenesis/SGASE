@@ -7,7 +7,7 @@ public abstract class AuxiliarCozinha extends CursosOfertados {
 
     public Cozinha local;
     public AuxiliarCozinha(  ArrayList<Professor> professores,String nome,int cargaHoraria, Cozinha local) {
-        super( professores, nome, cargaHoraria);
+        super( nome, cargaHoraria);
     }
 
    
