@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 public class AlunoBolsista extends Usuario {
 
-    protected int matricula;
-    protected int presenca[] = new int[192];
-    protected int faltas [] = new int [48];
+    protected String matricula;
+    protected int presenca;
+    protected int faltas;
     protected double notaProva [] = new double [2];
     protected double notaTrabalho [] = new double[2];
     protected double mediaAluno;
@@ -18,7 +18,7 @@ public class AlunoBolsista extends Usuario {
     
     public AlunoBolsista(){}
     public AlunoBolsista(String cpf, String senha, String email, String nome, 
-            int matricula,CursosOfertados cursoMatriculado) {
+            String matricula,CursosOfertados cursoMatriculado) {
         super(cpf,nome,email,senha);
         this.matricula = matricula;
         this.mediaAluno = 0;
@@ -40,14 +40,34 @@ public class AlunoBolsista extends Usuario {
     public double getNotaTrabalho(int index){
         return notaTrabalho[index];
     }
+    public void setNotaProva(int index,double valor){
+        this.notaProva[index] = valor;
+    }
     public void setNotaTrabalho(int index,double valor){
         this.notaTrabalho[index] = valor;
     }
+
+    public int getPresenca() {
+        return presenca;
+    }
+
+    public void addPresenca() {
+        this.presenca++;
+    }
+
+    public int getFaltas() {
+        return faltas;
+    }
+
+    public void addFalta() {
+        this.faltas++;
+    }
+    
+    
     public void visualizarPresenca(Professor x) {  
         System.out.println("Seu numero de presenças é" +x.totalPresenca(this) + " e seu numero de faltas é "+x.totalFalta(this));
     }    
     
-
     public void visualizaMediaAluno(CursosOfertados x) {
         System.out.println("A media do aluno é " +x.mediaAluno(this));
     }

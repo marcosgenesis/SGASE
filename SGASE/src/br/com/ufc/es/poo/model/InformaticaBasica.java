@@ -4,12 +4,12 @@ package br.com.ufc.es.poo.model;
 import java.util.ArrayList;
 import br.com.ufc.es.poo.model.Turma;
 
-public abstract class InformaticaBasica extends CursosOfertados {
+public class InformaticaBasica extends CursosOfertados {
 
     public Laboratorio local;
     
-    public InformaticaBasica( ArrayList<Professor> professores,String nome,int cargaHoraria, Laboratorio local) {
-        super ( professores, nome, cargaHoraria);
+    public InformaticaBasica(String nome,int cargaHoraria) {
+        super ( nome, cargaHoraria);
         this.local = local;
     }
 
@@ -36,6 +36,11 @@ public abstract class InformaticaBasica extends CursosOfertados {
     @Override
     public String toString() {
         return "InformaticaBasica{" + "local=" + local + '}';
+    }
+
+    @Override
+    public double mediaAluno(AlunoBolsista p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

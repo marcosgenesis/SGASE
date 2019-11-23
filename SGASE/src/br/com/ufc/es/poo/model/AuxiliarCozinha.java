@@ -3,10 +3,10 @@ package br.com.ufc.es.poo.model;
 import java.util.ArrayList;
 
 
-public abstract class AuxiliarCozinha extends CursosOfertados {
+public class AuxiliarCozinha extends CursosOfertados {
 
     public Cozinha local;
-    public AuxiliarCozinha(  ArrayList<Professor> professores,String nome,int cargaHoraria, Cozinha local) {
+    public AuxiliarCozinha(String nome,int cargaHoraria) {
         super( nome, cargaHoraria);
     }
 
@@ -29,6 +29,11 @@ public abstract class AuxiliarCozinha extends CursosOfertados {
        }
        mediaFinal = (mediaProva + mediaTrabalho)/4;
        return mediaFinal;
+    }
+
+    @Override
+    public double mediaAluno(AlunoBolsista p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

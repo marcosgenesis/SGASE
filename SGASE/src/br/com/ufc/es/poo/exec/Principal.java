@@ -4,8 +4,10 @@ package br.com.ufc.es.poo.exec;
 import br.com.ufc.es.poo.model.Administrador;
 import br.com.ufc.es.poo.model.AlunoBolsista;
 import br.com.ufc.es.poo.model.Artesanato;
+import br.com.ufc.es.poo.model.AuxiliarCozinha;
 import br.com.ufc.es.poo.model.CursosOfertados;
 import br.com.ufc.es.poo.model.FrequenciaRemunerada;
+import br.com.ufc.es.poo.model.InformaticaBasica;
 import br.com.ufc.es.poo.model.Professor;
 import br.com.ufc.es.poo.model.Turma;
 import java.util.ArrayList;
@@ -100,11 +102,9 @@ public class Principal {
                                     System.out.println("1 - Visualizar minhas turmas");
                                     System.out.println("2 - Cadastrar nota de trabalhos");
                                     System.out.println("3 - Cadastrar nota de provas");
-                                    System.out.println("4 - Cadastrar faltas de aluno");
-                                    System.out.println("5 - Cadastrar presenças de aluno");
+                                    System.out.println("4 - Cadastrar frequencia de alunos");
                                     System.out.println("6 - Verificar frequência remunerada");
                                     System.out.println("7 - Fazer média da turma");
-                                    System.out.println("8 - Fazer média de aluno");
                                     System.out.println("9 - Sair");
                                     int respostaOpcaoDisponivel = Integer.parseInt(ler.nextLine());
                                     switch (respostaOpcaoDisponivel) {
@@ -164,11 +164,95 @@ public class Principal {
                                                     alunosCadastrados.get(alunoEscolhido.getCpf()).setNotaTrabalho(trabalhoEscolhido, notaTrabalho);
                                                 }
                                         }
-                                        
-                                        
                                     }
-                                    case 3:
-                                        break;
+                                    case 3:{
+                                        
+                                        Turma turmaEscolhida = null;
+                                        System.out.println("======CADASTRAR NOTAS PROVA=======");
+                                        System.out.println("Escolha a turma desejada para adcionar as notas.");
+                                        for (Turma turma : turmasCadastradas) {
+                                            if (turma.getProfessor(professorLogado))
+                                                System.out.println(turma.getIdentificacao() + " - " + turma.getCurso().getNome());
+                                        }
+                                            int idTurmaEscolhida = Integer.parseInt(ler.nextLine());
+                                        
+                                        if (!(idTurmaEscolhida > turmasCadastradas.size() || idTurmaEscolhida < 0)) {
+                                               for (Turma turma : turmasCadastradas) {
+                                                    if (turma.getIdentificacao() == turmasCadastradas.get(idTurmaEscolhida).getIdentificacao()){
+                                                        turmaEscolhida = turma;
+                                                        break;
+                                                    }
+                                                }
+                                                if(turmaEscolhida.getParticipantes().isEmpty()){
+                                                    System.out.println("Turma vazia. Sem alunos");
+                                                }else{
+                                                    System.out.println("=====ALUNOS DESSA TURMA=====");
+                                                    for (int i = 0; i < turmaEscolhida.getParticipantes().size(); i++) {
+                                                        System.out.println(turmaEscolhida.getAluno(i).getCpf() + " - " + turmaEscolhida.getAluno(i).getNome());
+                                                    }
+                                                    AlunoBolsista alunoEscolhido = null;
+                                                    String cpfAlunoEscolhido = ler.nextLine();
+                                                    for (int i = 0; i < turmaEscolhida.getParticipantes().size(); i++) {
+                                                        if (cpfAlunoEscolhido.equals(turmaEscolhida.getAluno(i).getCpf())) {
+                                                            alunoEscolhido = turmaEscolhida.getAluno(i);
+                                                        }
+                                                    }
+                                                    if (alunoEscolhido == null) 
+                                                        System.out.println("Aluno Inexistente");
+                                                    int provaEscolhida = 0;
+                                                    do{
+                                                        System.out.println("Qual trabalho você quer adicionar a nota?");
+                                                        System.out.println("1° Prova");
+                                                        System.out.println("2° Prova");
+                                                        provaEscolhida = Integer.parseInt(ler.nextLine());
+                                                    }while(provaEscolhida > 2 || provaEscolhida<1);
+                                                    double notaTrabalho = 0;
+                                                    do {
+                                                        System.out.println("DIGITE A NOTA DO TRABALHO DISPONÍVEL");
+                                                        notaTrabalho = Double.parseDouble(ler.nextLine());
+                                                    } while (notaTrabalho > 10 || notaTrabalho<0);
+                                                    alunosCadastrados.get(alunoEscolhido.getCpf()).setNotaProva(provaEscolhida, notaTrabalho);
+                                                }
+                                        }
+                                    }
+                                    case 4:{
+                                        
+                                        Turma turmaEscolhida = null;
+                                        System.out.println("======CADASTRAR PRESENÇA=======");
+                                        System.out.println("Escolha a turma desejada para adcionar as notas.");
+                                        for (Turma turma : turmasCadastradas) {
+                                            if (turma.getProfessor(professorLogado))
+                                                System.out.println(turma.getIdentificacao() + " - " + turma.getCurso().getNome());
+                                        }
+                                            int idTurmaEscolhida = Integer.parseInt(ler.nextLine());
+                                        
+                                        if (!(idTurmaEscolhida > turmasCadastradas.size() || idTurmaEscolhida < 0)) {
+                                               for (Turma turma : turmasCadastradas) {
+                                                    if (turma.getIdentificacao() == turmasCadastradas.get(idTurmaEscolhida).getIdentificacao()){
+                                                        turmaEscolhida = turma;
+                                                        break;
+                                                    }
+                                                }
+                                                if(turmaEscolhida.getParticipantes().isEmpty()){
+                                                    System.out.println("Turma vazia. Sem alunos");
+                                                }else{
+                                                    for (int i = 0; i < turmaEscolhida.getParticipantes().size(); i++) {
+                                                        int tipoPresenca;
+                                                        do{
+                                                            System.out.println(turmaEscolhida.getAluno(i).getNome() + " (0-falta e 1-presença)");
+                                                            tipoPresenca = Integer.parseInt(ler.nextLine());
+                                                        }while(tipoPresenca > 1 || tipoPresenca <0);
+                                                        if (tipoPresenca == 0) {
+                                                           alunosCadastrados.get(turmaEscolhida.getAluno(i).getCpf()).addFalta();
+                                                           System.out.println(turmaEscolhida.getAluno(i).getNome() + " faltou!");
+                                                        }else{
+                                                           alunosCadastrados.get(turmaEscolhida.getAluno(i).getCpf()).addPresenca();
+                                                           System.out.println(turmaEscolhida.getAluno(i).getNome() + " está presente!");
+                                                        }
+                                                    }
+                                                }
+                                        }
+                                    }
                                     case 9:
                                         voltarMenuPrincipal = true;
                                     default:
@@ -252,7 +336,7 @@ public class Principal {
                                         opcaoTurma = Integer.parseInt(ler.nextLine());
                                     }while(opcaoTurma > turmasCadastradas.size() || opcaoTurma < 0);
                                     Turma turmaEscolhida = turmasCadastradas.get(opcaoTurma);
-                                    alunosCadastrados.put(cpf, new AlunoBolsista(cpf, senha, email, nome, (Integer.parseInt(cpf)/10),turmaEscolhida.getCurso()));
+                                    alunosCadastrados.put(cpf, new AlunoBolsista(cpf, senha, email, nome, ("0"+cpf),turmaEscolhida.getCurso()));
                                     AlunoBolsista alunocadastrado = alunosCadastrados.get(cpf);
                                     turmaEscolhida.setAluno(alunocadastrado);
                                     System.out.println("Aluno Cadastrado!");
@@ -298,15 +382,25 @@ public class Principal {
                                 int cursoEscolhido;
                                 try {
                                     cursoEscolhido = Integer.parseInt(ler.nextLine());
-                                    if (cursoEscolhido < 3 && cursoEscolhido >= 1){
+                                    if (cursoEscolhido < 4 && cursoEscolhido >= 1){
+                                        int cargaHorariaCurso;
+                                        System.out.println("Digite a carga horária para este curso: ");
+                                        cargaHorariaCurso = Integer.parseInt(ler.nextLine());
                                         switch(cursoEscolhido){
                                             case 1:
-                                                System.out.println("Digite a carga horáaria para este curso: ");
-                                                int cargaHorariaCurso = Integer.parseInt(ler.nextLine());
                                                 turmasCadastradas.add(new Turma(quantidadeTurmas,new Artesanato("Artesanato", cargaHorariaCurso)));
                                                 quantidadeTurmas++;
                                                 System.out.println(turmasCadastradas.get(0).getCurso().getNome() + 
                                                         turmasCadastradas.get(0).toString());
+                                                break;
+                                            case 2:
+                                                turmasCadastradas.add(new Turma(quantidadeTurmas,new AuxiliarCozinha("Auxiliar de cozinha", cargaHorariaCurso)));
+                                                quantidadeTurmas++;
+                                                break;
+                                            case 3:
+                                                turmasCadastradas.add(new Turma(quantidadeTurmas,new InformaticaBasica("Informática Básica", cargaHorariaCurso)));
+                                                quantidadeTurmas++;;
+                                                break;
                                         }
                                     }
                                 } catch (NumberFormatException err) {
