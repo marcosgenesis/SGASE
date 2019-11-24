@@ -6,9 +6,8 @@ import java.util.ArrayList;
 public class AuxiliarCozinha extends CursosOfertados {
 
     public Cozinha local;
-    public AuxiliarCozinha(ArrayList professores,String nome,int cargaHoraria, Cozinha local) {
+    public AuxiliarCozinha(String nome,int cargaHoraria) {
         super( nome, cargaHoraria);
-        this.local = local;
     }
 
    
