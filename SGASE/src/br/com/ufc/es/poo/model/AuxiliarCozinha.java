@@ -6,15 +6,16 @@ import java.util.ArrayList;
 public class AuxiliarCozinha extends CursosOfertados {
 
     public Cozinha local;
-    public AuxiliarCozinha(String nome,int cargaHoraria) {
+    public AuxiliarCozinha(ArrayList professores,String nome,int cargaHoraria, Cozinha local) {
         super( nome, cargaHoraria);
+        this.local = local;
     }
 
    
       public double mediaCurso(ArrayList participantes, AlunoBolsista p){ 
         double mediaGeral = 0;
         for(int i=0; i < participantes.size();i++){
-            //mediaGeral += p.getMediaAluno();
+            mediaGeral += p.getMediaAluno();
         }
         return mediaGeral;
     }
