@@ -11,7 +11,7 @@ public class Professor extends Usuario {
         super(cpf,nome,email,senha);
     }
 
-    public int totalFalta(AlunoBolsista p){
+    public int totalFalta(AlunoBolsista p, int faltas[]){
         int i = 0, j =0; int totalFaltas = 0;
         for(i =0; i < p.faltas.length ;i++){
             p.faltas[i] += 2;
