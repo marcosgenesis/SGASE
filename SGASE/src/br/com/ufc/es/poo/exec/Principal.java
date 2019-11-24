@@ -217,7 +217,7 @@ public class Principal {
                                     }
                                     case 4:{
                                         
-                                        Turma turmaEscolhida = null;
+                                        /*Turma turmaEscolhida = null;
                                         System.out.println("======CADASTRAR PRESENÇA=======");
                                         System.out.println("Escolha a turma desejada para adcionar as notas.");
                                         for (Turma turma : turmasCadastradas) {
@@ -251,7 +251,7 @@ public class Principal {
                                                         }
                                                     }
                                                 }
-                                        }
+                                        }*/
                                     }
                                     case 9:
                                         voltarMenuPrincipal = true;
