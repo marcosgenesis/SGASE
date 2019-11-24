@@ -8,7 +8,11 @@ public class InformaticaBasica extends CursosOfertados {
 
     public Laboratorio local;
     
+<<<<<<< Updated upstream
     public InformaticaBasica(String nome,int cargaHoraria) {
+=======
+    public InformaticaBasica( ArrayList<Professor> professores,String nome,int cargaHoraria, Laboratorio local) {
+>>>>>>> Stashed changes
         super ( nome, cargaHoraria);
         this.local = local;
     }

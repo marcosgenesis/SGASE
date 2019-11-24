@@ -46,6 +46,7 @@ public class AlunoBolsista extends Usuario {
     public void setNotaTrabalho(int index,double valor){
         this.notaTrabalho[index] = valor;
     }
+<<<<<<< Updated upstream
 
     public int getPresenca() {
         return presenca;
@@ -66,13 +67,19 @@ public class AlunoBolsista extends Usuario {
     
     public void visualizarPresenca(Professor x) {  
         System.out.println("Seu numero de presenças é" +x.totalPresenca(this) + " e seu numero de faltas é "+x.totalFalta(this));
+=======
+   
+    public void visualizarPresenca() {
+        System.out.println("Seu numero de presenças é" +this.presenca + " e seu numero de faltas é "+this.faltas);
+>>>>>>> Stashed changes
     }    
     
     public void visualizaMediaAluno(CursosOfertados x) {
         System.out.println("A media do aluno é " +x.mediaAluno(this));
     }
 
-    public void visualizaMediaTurma(Professor p, ArrayList participantes, CursosOfertados x) {
+    public void visualizaMediaTurma(ArrayList participantes, CursosOfertados x) {
+        Professor p = null; //cria apenas pra ter acesso ao método
        System.out.println(p.getMediaTurma(participantes,x));
     }
     
